@@ -14,8 +14,6 @@ Contents
 --------
 
 .. toctree::
-
    Installing and Running
    Asteroid User Guide
    Reference Guide
-

@@ -1,42 +1,43 @@
-# Asteroid User Guide
+Asteroid User Guide
+###################
 
-## Introduction
+Introduction
+------------
 
-Asteroid is a
-multi-paradigm programming language heavily influenced by [Python](https://www.python.org), [Rust](https://www.rust-lang.org), [ML](https://www.smlnj.org), and [Prolog](http://www.swi-prolog.org), that makes pattern matching one of its core computational mechanisms.  This is often called *pattern-matching oriented programming*.
+Asteroid is a multi-paradigm programming language heavily influenced by [Python](https://www.python.org), [Rust](https://www.rust-lang.org), [ML](https://www.smlnj.org), and [Prolog](http://www.swi-prolog.org), that makes pattern matching one of its core computational mechanisms.  This is often called *pattern-matching oriented programming*.
 
 In this document we describe the major features of Asteroid and give plenty of examples.  If you have used a programming language like Python or JavaScript before, then Asteroid should appear very familiar.  However, there are some features which differ drastically from other programming languages due to the core pattern-matching programming
 paradigm.  Here are just two examples:
 
 **Example 1:** All statements that look like assignments are actually pattern-match statements.  For example if we state,
-```
-let [x,2,y] = [1,2,3].
-```
+::
+    let [x,2,y] = [1,2,3].
+
 that means the subject term `[1,2,3]` is matched to the pattern `[x,2,y]` and `x` and `y` are bound to the values 1 and 3, respectively.  By the way, there is nothing wrong with the following statement,
-```
-let [1,2,3] = [1,2,3].
-```
+::
+    let [1,2,3] = [1,2,3].
+
 which is just another pattern match without any variable instantiations.
 
 **Example 2:** Patterns in Asteroid are first-class citizens of the language.
 This is best demonstrated with a program.  Here is a program
 that recursively computes the factorial of a positive integer and uses first-class patterns
 in order to ensure that the domain of the function is not violated,
-```
--- define first-class patterns
-let POS_INT = pattern with (x:%integer) %if x > 0.
-let NEG_INT = pattern with (x:%integer) %if x < 0.
+::
+    -- define first-class patterns
+    let POS_INT = pattern with (x:%integer) %if x > 0.
+    let NEG_INT = pattern with (x:%integer) %if x < 0.
 
--- define our factorial function
-function fact
-    with 0 do
-        return 1
-    orwith n:*POS_INT do            -- use first pattern
-        return n * fact (n-1).
-    orwith n:*NEG_INT do            -- use second pattern
-        throw Error("undefined for "+n).
-    end
-```
+    -- define our factorial function
+    function fact
+        with 0 do
+            return 1
+        orwith n:*POS_INT do            -- use first pattern
+            return n * fact (n-1).
+        orwith n:*NEG_INT do            -- use second pattern
+            throw Error("undefined for "+n).
+        end
+
 As you can see, the program first creates patterns and stores them in the variables
 `POS_INT` and `NEG_INT` and it uses those patterns later in the code by
 dereferencing those variables with the `*` operator.  First-class patterns have
@@ -49,54 +50,56 @@ with programming in Asteroid.
 
 
 
-## Installation
+Installation
+------------
 
 Download or clone the [Asteroid github repository](https://github.com/lutzhamel/asteroid), or download one of the [prepackaged releases](https://github.com/lutzhamel/asteroid/releases), and then install with [pip](https://pip.pypa.io/en/stable/).
 
 For example, if your working directory is at the top of the repository,
-```
-$ python -m pip install .
-```
+::
+    $ python -m pip install .
+
 
 The same command should work on Unix-like and Windows systems, though you may have to run it with `python3` or some other variation.
 
 In addition, there is a cloud-based Linux virtual machine that is completely set up with an Asteroid environment and can be accessed at [Repl.it](https://repl.it/@lutzhamel/asteroid#README.md).
 
-## Running the Asteroid Interpreter
+Running the Asteroid Interpreter
+--------------------------------
 
 You can now run the interpreter from the command line by simply typing `asteroid`. This will work on both Windows and Unix-like systems as long as you followed the instructions above.
 To run asteroid on Unix-like systems and on our virtual machine,
-```
-$ cat hello.ast
--- the obligatory hello world program
+::
+    $ cat hello.ast
+    -- the obligatory hello world program
 
-load system "io".
+    load system "io".
 
-println "Hello, World!".
+    println "Hello, World!".
 
-$ asteroid hello.ast
-Hello, World!
-$
-```
+    $ asteroid hello.ast
+    Hello, World!
+    $
+
 On Windows 10 the same thing looks like this,
-```
-C:\> type hello.ast
--- the obligatory hello world program
+::
+    C:\> type hello.ast
+    -- the obligatory hello world program
 
-load system "io".
+    load system "io".
 
-println "Hello, World!".
+    println "Hello, World!".
 
-C:\> asteroid hello.ast
-Hello, World!
-C:\>
-```
+    C:\> asteroid hello.ast
+    Hello, World!
+    C:\>
+
 
 As you can see, once you have Asteroid installed on your system you can execute an
 Asteroid program by typing,
-```
-asteroid [flags] <program file>
-```
+::
+    asteroid [flags] <program file>
+
 at the command prompt.
 
 ## The Basics
@@ -114,9 +117,9 @@ Asteroid arranges these data types in a **type hierarchy**,
 
 Type hierarchies facilitate automatic type promotion.  Here is an example
 where automatic type promotion is used to put together a string from different data types,
-```
-let x:%string = "value: " + 1.
-```
+::
+    let x:%string = "value: " + 1.
+
 Here we associate the string `"value: 1"` with the variable `x` by first promoting the integer value `1` to the string `"1"` using the fact that `integer` < `string`  according to our type hierarchy  and then interpreting the `+` operator as a string concatenation operator.
 
 Asteroid supports two more data types:
@@ -126,59 +129,61 @@ Asteroid supports two more data types:
 
 These are **structured data types** in that they can contain entities of other data types. Both of these data types have the probably familiar constructors which are possibly empty squences of comma separated values enclosed by square brackets for lists, e.g. `[1,2,3]`, and enclosed by parentheses for tuples, e.g. `(x,y)`. For tuples we have the caveat that the 1-tuple is represented by a value followed by a comma to distinguish it from parenthesized expressions, e.g.`(3,)`.
 Here are some examples,
-```
-let a = [1,2,3].  -- this is a list
-let c = (1,2,3).  -- this is a tuple
-```
+::
+    let a = [1,2,3].  -- this is a list
+    let c = (1,2,3).  -- this is a tuple
+
 As we said above, in order to distinguish it from a parenthesized value the single element in a 1-tuple has to be followed by a comma, like so,
-```
-let one_tuple = (1,).  -- this is a 1-tuple
-```
+::
+    let one_tuple = (1,).  -- this is a 1-tuple
+
 Lists and tuples themselves are also embedded in type hierarchies, although very simple ones:
 
 * `list` < `string`
 * `tuple` < `string`
 
 That is, any list or tuple can be viewed as a string.  This is very convenient for printing lists and tuples,
-```
-load system "io".
-println ("this is my list: " + [1,2,3]).
-```
+::
+    load system "io".
+    println ("this is my list: " + [1,2,3]).
+
 
 Finally, Asteroid supports one more type, namely the `none` type.  The `none` type has
 only one member: A constant named conveniently `none`.  The null-tuple belongs to this type (rather than the tuple type discussed earlier) and therefore the constant `()` can often be used as a convenient short hand for the constant `none`.  That is, the following `let` statements will succeed,
-```
-let none = ().
-let () = none.
-```
+::
+    let none = ().
+    let () = none.
+
 meaning that the constants `()` and `none` are equivalent and pattern-match each other.
 The `none` data type itself does not belong to any type hierarchy.
 
 By now you probably figured out that statements are terminated with a period and that comments start with a `--` symbol and continue till the end of the line.  You probably also figured out that the `let` statement is Asteroid's version of assignment even though the underlying mechanism is a bit different.
 
 ## Data Structures
+------------------
 
 ### Lists
+---------
 
 In Asteroid the `list` is a fundamental, built-in data structure.  A trait it shares with programming languages such as Lisp, Python, ML, and Prolog.  Below is the list reversal example from above as an executable Asteroid program. So go ahead and experiment!
-```
-load system "io".    -- load the io module so we can print
+::
+    load system "io".    -- load the io module so we can print
 
-let a = [1,2,3].     -- construct list a
-let b = a @[2,1,0].  -- reverse list a
-println b.
-```
+    let a = [1,2,3].     -- construct list a
+    let b = a @[2,1,0].  -- reverse list a
+    println b.
+
 The output is: `[3,2,1]`.
 
 In Asteroid lists are considered objects with member functions that can manipulate the list
 object, e.g. `[1,2,3] @ reverse()`. We could rewrite the above example as,
-```
-load system "io".          
+::
+    load system "io".          
 
-let a = [1,2,3].    
-let b = a @reverse().
-println b.
-```
+    let a = [1,2,3].    
+    let b = a @reverse().
+    println b.
+
 For a full list of available member functions for Asteroid lists please see the reference guide.
 
 As we have seen, the `@` operator allows you to access either individual elements, slices, or member functions of a list.  
@@ -186,35 +191,35 @@ As we have seen, the `@` operator allows you to access either individual element
 Besides using the default constructor for lists which consists of the
 square brackets enclosing a list of elements we can use **list comprehensions** to construct lists.  In Asteroid a list comprehension consist of a range specifier together with
 a step specifier allowying you to generate integer values within that range,
-```
-load system "io".          
+::
+    load system "io".          
 
--- build a list of odd values
-let a = [1 to 10 step 2].  -- list comprehension
-println ("list: " + a).
+    -- build a list of odd values
+    let a = [1 to 10 step 2].  -- list comprehension
+    println ("list: " + a).
 
--- reverse the list using a slice computed as comprehension
-let slice = [4 to 0 step -1]. -- list comprehension
-let b = a @slice.
-println ("reversed list: " + b).
-```
+    -- reverse the list using a slice computed as comprehension
+    let slice = [4 to 0 step -1]. -- list comprehension
+    let b = a @slice.
+    println ("reversed list: " + b).
+
 The output is,
-```
+::
     list: [1,3,5,7,9]
     reversed list: [9,7,5,3,1]
-```
+
 Asteroid's simple list comprehensions in conjunction with the `map` function for lists allows you to
 construct virtually  any kind of list. For example, the following program constructs
 a list of alternating 1 and -1,
-```
-load system "io".
-load system "math".
+::
+    load system "io".
+    load system "math".
 
-let a = [1 to 10] @map(lambda with x do return mod(x,2))
-                  @map(lambda with x do return 1 if x else -1).
+    let a = [1 to 10] @map(lambda with x do return mod(x,2))
+                    @map(lambda with x do return 1 if x else -1).
 
-println a.
-```
+    println a.
+
 where the output is,
 ```
 [1,-1,1,-1,1,-1,1,-1,1,-1]

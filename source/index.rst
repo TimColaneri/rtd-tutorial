@@ -3,18 +3,19 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Asteroid's documentation!
-====================================
+Asteroid Programming Language Documentation
+===========================================
+
+**Asteroid** is an open source, dynamically typed, multi-paradigm programming language heavily influenced by Python, Rust, ML, and Prolog currently under development at the University of Rhode Island.  Asteroid implements a new programming paradigm called pattern-matching oriented programming.  In this new programming paradigm patterns and pattern matching are supported by all major programming language constructs making programs succinct and robust.  Furthermore, patterns themselves are first-class citizens and as such can be passed to and returned from functions as well as manipulated computationally.
+
+Check out the TODOa section for information on how to install and run the project.
+
+Contents
+--------
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
 
+   Installing and Running
+   Asteroid User Guide
+   Reference Guide
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

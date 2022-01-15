@@ -274,8 +274,8 @@ A string is a sequence of characters that can be used as a variable or a literal
 
 * Function `replace` will return a copy of the string with all occurrences of regular expression pattern `old` replaced by the string `new`. If the optional argument count is given, only the first count occurrences are replaced. It can be called with several
 different inputs:
-  1. `(old:%string,new:%string,count:%integer)`
-  1. `(old:%string,new:%string)`
+  |1. `(old:%string,new:%string,count:%integer)`
+  |1. `(old:%string,new:%string)`
 
 * Function `split` will return a list of the words in a given string, using `sep` as the delimiter string. If `maxsplit` is given: at most maxsplit splits are done (thus, the list will have at most maxsplit+1 elements). If maxsplit is not specified or -1, then there is no limit on the number of splits (all possible splits are made).
 
@@ -285,8 +285,8 @@ different inputs:
 
   Function `split` can be called with several different inputs:
   1. Input `(sep:%string,count:%integer)`
-  1. Input `(sep:%string)`
-  1. Input `(none)`
+  |2. Input `(sep:%string)`
+  |3. Input `(none)`
 
 * Function `toupper`, converts all the lowercase letters in a string to uppercase.
 * Function `tolower`, converts all the uppercase letters in a string to lowercase.

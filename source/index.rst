@@ -12,7 +12,7 @@ Contents
 --------
 
 .. toctree::
-   :depth: 2
+   :maxdepth: 2
    Installing and Running
    Asteroid User Guide
    Reference Guide

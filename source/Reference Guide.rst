@@ -249,23 +249,23 @@ A string is a sequence of characters that can be used as a variable or a literal
 * Function `gettype` will get the type of `x` as an Asteroid string. (See the module `Type.ast <https://github.com/lutzhamel/asteroid/blob/master/code/modules/type.ast>`_ for more on this function.) -->
 
 * The following `string_member_functions`,
-.. highlight:: python
-  escape
-  "
-  global string_member_functions
+  ::
+    escape
+    "
+    global string_member_functions
 
-  string_member_functions.update({
-  'length'    : '__string_length__',
-  'explode'   : '__string_explode__',
-  'trim'      : '__string_trim__',
-  'replace'   : '__string_replace__',
-  'split'     : '__string_split__',
-  'toupper'   : '__string_toupper__',
-  'tolower'   : '__string_tolower__',
-  'index'     : '__string_index__',
-  'flip'      : '__string_flip__',
-  })
-  "
+    string_member_functions.update({
+    'length'    : '__string_length__',
+    'explode'   : '__string_explode__',
+    'trim'      : '__string_trim__',
+    'replace'   : '__string_replace__',
+    'split'     : '__string_split__',
+    'toupper'   : '__string_toupper__',
+    'tolower'   : '__string_tolower__',
+    'index'     : '__string_index__',
+    'flip'      : '__string_flip__',
+    })
+    "
 (For implementation details, see Python lists `here <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_.)
 -->
 * Function `length` returns the number of characters within that string.

@@ -6,11 +6,6 @@ This document was inspired by Andrew Shitov's excellent book `Using Raku: 100 Pr
 Table of Contents
 -----------------
 
-[Chapter: Strings](#chapterstrings)<br>
-  [Section: Using Strings](#usingstrings)<br>
-  [Section: Modifying string data](#modifyingstrings)<br>
-  [Section: Text Analysis](#textanalysis)<br>
-
 :ref:`Chapter: Strings`
     :ref:`Section: Using Strings`
     :ref:`Section: Modifying string data`
@@ -26,7 +21,11 @@ Table of Contents
   [Section: Information retrieval](#informationretrieval)<br>
   [Section: Multi-dimensional data](#multidimensionaldata)<br>
 
+Chapter: Strings
+----------------
 
+Section: Using Strings
+----------------------
 
 Challenge: Hello, World!
 ^^^^^^^^^^^^^^^^^^^^^^^^

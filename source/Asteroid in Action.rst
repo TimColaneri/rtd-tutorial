@@ -9,8 +9,8 @@ Table of Contents
 :ref:`Chapter: Strings` 
 
    :ref:`Section: Using Strings` 
-|   :ref:`Section: Modifying string data` 
-|   :ref:`Section: Text Analysis` 
+   :ref:`Section: Modifying string data` 
+   :ref:`Section: Text Analysis` 
 
 
 :ref:`Chapter: Numbers` 

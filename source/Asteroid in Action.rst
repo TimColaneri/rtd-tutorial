@@ -2099,8 +2099,8 @@ with its transpose,
 ::
     let m = [[1,3,5],
             [2,4,6]].
-     
-..  ::
+The procedure:     
+::
     load system "io".
 
     function transpose with m do

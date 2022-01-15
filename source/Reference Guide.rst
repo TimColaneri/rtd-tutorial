@@ -274,8 +274,9 @@ A string is a sequence of characters that can be used as a variable or a literal
 
 * Function `replace` will return a copy of the string with all occurrences of regular expression pattern `old` replaced by the string `new`. If the optional argument count is given, only the first count occurrences are replaced. It can be called with several
 different inputs:
-  |1. `(old:%string,new:%string,count:%integer)`
-  |1. `(old:%string,new:%string)`
+
+  * `(old:%string,new:%string,count:%integer)`
+  * `(old:%string,new:%string)`
 
 * Function `split` will return a list of the words in a given string, using `sep` as the delimiter string. If `maxsplit` is given: at most maxsplit splits are done (thus, the list will have at most maxsplit+1 elements). If maxsplit is not specified or -1, then there is no limit on the number of splits (all possible splits are made).
 

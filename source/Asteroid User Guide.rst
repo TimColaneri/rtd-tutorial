@@ -53,7 +53,7 @@ with programming in Asteroid.
 Installation
 ------------
 
-Download or clone the [Asteroid github repository](https://github.com/lutzhamel/asteroid), or download one of the [prepackaged releases](https://github.com/lutzhamel/asteroid/releases), and then install with [pip](https://pip.pypa.io/en/stable/).
+Download or clone the `Asteroid github repository <https://github.com/lutzhamel/asteroid>`_, or download one of the `prepackaged releases <https://github.com/lutzhamel/asteroid/releases>`_, and then install with `pip <https://pip.pypa.io/en/stable/>`_.
 
 For example, if your working directory is at the top of the repository,
 ::
@@ -62,7 +62,7 @@ For example, if your working directory is at the top of the repository,
 
 The same command should work on Unix-like and Windows systems, though you may have to run it with `python3` or some other variation.
 
-In addition, there is a cloud-based Linux virtual machine that is completely set up with an Asteroid environment and can be accessed at [Repl.it](https://repl.it/@lutzhamel/asteroid#README.md).
+In addition, there is a cloud-based Linux virtual machine that is completely set up with an Asteroid environment and can be accessed at `Repl.it <https://repl.it/@lutzhamel/asteroid#README.md>`_.
 
 Running the Asteroid Interpreter
 --------------------------------
@@ -102,7 +102,8 @@ Asteroid program by typing,
 
 at the command prompt.
 
-## The Basics
+The Basics
+----------
 
 As with most languages we are familiar with, Asteroid has **variables** (alpha-numeric symbols starting with an alpha character) and **constants**.  Constants are available for all the **primitive data types**,
 

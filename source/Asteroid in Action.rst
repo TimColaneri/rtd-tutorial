@@ -6,11 +6,13 @@ This document was inspired by Andrew Shitov's excellent book `Using Raku: 100 Pr
 Table of Contents
 -----------------
 
-:ref:`Chapter: Strings` 
+.. contents:: Table of Contents
+    :depth: 3
 
-   :ref:`Section: Using Strings` 
-   :ref:`Section: Modifying string data` 
-   :ref:`Section: Text Analysis` 
+:ref:`Chapter: Strings` 
+*:ref:`Section: Using Strings` 
+*:ref:`Section: Modifying string data` 
+*:ref:`Section: Text Analysis` 
 
 
 :ref:`Chapter: Numbers` 

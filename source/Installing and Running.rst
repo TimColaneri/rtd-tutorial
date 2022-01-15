@@ -15,7 +15,6 @@ Running the Asteroid Interpreter
 ================================
 
 You can now run the interpreter from the command line by simply typing asteroid. This will work on both Windows and Unix-like systems as long as you followed the instructions above,
-
 ::
     $ cat simple.ast
     -- a simple program using lambda functions

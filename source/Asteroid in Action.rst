@@ -11,6 +11,11 @@ Table of Contents
   [Section: Modifying string data](#modifyingstrings)<br>
   [Section: Text Analysis](#textanalysis)<br>
 
+:ref:`Chapter: Strings`
+    :ref:`Section: Using Strings`
+    :ref:`Section: Modifying string data`
+    :ref:`Section: Text Analysis`
+
 [Chapter: Numbers](#numbers)<br>
   [Section: Using numbers](#sectionusingnumbers)<br>
   [Section: Random numbers](#randomnumbers)<br>
@@ -125,8 +130,8 @@ Output:
 
 Probably the most noteworthy characteric about this program is the `reduce` function.  The `reduce` function applies a binary function to a list.  The first argument of the binary function acts like an accumulator, and the second argument gets instantiated with the elements of the list to be processed.  In our function `unique`, the variable `x` is the accumulator with an initial value of `[]`.  The function tests whether the element `y` is in the list.  If it is not, then it adds it to the list. Otherwise, it just returns the accumulator unchanged.
 
-Section: Modifying string data <a name="modifyingstrings"></a>
---------------------------------------------------------------
+Section: Modifying string data 
+------------------------------
 
 Challenge: Reverse a string
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -355,8 +360,8 @@ Output:
     hello, world!
 
 
-Section: Text Analysis <a name="textanalysis"></a>
---------------------------------------------------
+Section: Text Analysis
+----------------------
 
 Challenge: Plural Endings
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -650,11 +655,11 @@ Output:
     sit amet condimentum: 2
 
 
-Chapter: Numbers <a name="numbers"></a>
----------------------------------------
+Chapter: Numbers
+----------------
 
-Section: Using numbers <a name="sectionusingnumbers"></a>
----------------------------------------------------------
+Section: Using numbers
+----------------------
 
 Challenge: Pi
 ^^^^^^^^^^^^^
@@ -1037,8 +1042,8 @@ Output:
     We are still alive...
 
 
-Section: Random numbers <a name="randomnumbers"></a>
-----------------------------------------------------
+Section: Random numbers
+-----------------------
 
 Challenge: Generating random numbers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1131,8 +1136,8 @@ Output:
     [944,1032,1015,968,981,986,1014,1058,989,1013]
 
 
-Section: Mathematical problems <a name="mathproblems"></a>
-----------------------------------------------------------
+Section: Mathematical problems
+------------------------------
 
 Challenge: Distance between two points
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1561,11 +1566,11 @@ Output:
     one thousand one
 
 
-Chapter: Aggregate Data Types <a name="datatypes"></a>
-------------------------------------------------------
+Chapter: Aggregate Data Types
+-----------------------------
 
-Section: Manipulating lists and arrays <a name="listsandarrays"></a>
---------------------------------------------------------------------
+Section: Manipulating lists and arrays
+--------------------------------------
 
 Challenge: Swap two values
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1774,8 +1779,8 @@ Output:
     [2,3,1,4]
 
 
-Section: Information retrieval <a name="informationretrieval"></a>
-------------------------------------------------------------------
+Section: Information retrieval
+------------------------------
 
 Challenge: Sum of the elements of an array
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2071,8 +2076,8 @@ Output:
 ::
     true
 
-Section: Multi-dimensional data <a name="multidimensionaldata"></a>
--------------------------------------------------------------------
+Section: Multi-dimensional data
+-------------------------------
 
 Challenge: Transpose a matrix
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2385,11 +2390,11 @@ Output:
 The program prints the first seven rows of the Pascal triangle. The rows are not centred, and are aligned to the left side.
 As an extra exercise, modify the program so that it prints the triangle as it is shown at the beginning of this task. For example, you can first generate rows and keep them in a separate array and then, knowing the length of the longest string, add some spaces in front of the rows before printing them.
 
-Chapter: Object-Oriented programming <a name="oop"></a>
--------------------------------------------------------
+Chapter: Object-Oriented programming
+------------------------------------
 
-Section: Simple OO challenges <a name="simpleoochallenges"></a>
----------------------------------------------------------------
+Section: Simple OO challenges
+-----------------------------
 
 Inheritance I
 ^^^^^^^^^^^^^

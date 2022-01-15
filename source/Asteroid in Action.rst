@@ -33,7 +33,7 @@ The canonical `Hello, World!` program.  The easiest way to write this in Asteroi
     load system "io".
 
     println "Hello, World!".
-::
+..
     Hello, World!
 
 
@@ -77,7 +77,7 @@ In order to print the length of a string we can use the function `len` available
     load system "util".
 
     println (len("Hello!")).
-::
+..
     6
 
 
@@ -97,8 +97,6 @@ Challenge: Unique digits
 
 In order to accomplish this we take advantage of the string `explode` function and the `sort` function on lists.
 Finally we use the `reduce` function to map a list with repeated digits to a list with unique digits,
-
-
 ::
     load system "io".
 
@@ -131,8 +129,6 @@ Challenge: Reverse a string
 > Print a string in the reversed order from right to left.
 
 We use the `explode` function to turn a string into a list of characters. Then, we reverse the list and turn it back into a string using the `join` function,
-
-
 ::
     load system "io".
 
@@ -150,8 +146,6 @@ Challenge: Removing blanks from a string
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 > Remove leading, trailing, and double spaces from a given string.
-
-
 ::
     load system "io".
 
@@ -172,8 +166,6 @@ Challenge: Camel case
 In this task, we will form the `CamelCase` variable for names from a given phrase.
 Names created in this style are built of several words, each of which starts
 with a capital letter.
-
-
 ::
     load system "io".
 

@@ -9,22 +9,6 @@ Table of Contents
 .. contents:: Table of Contents
     :depth: 3
 
-:ref:`Chapter: Strings` 
-*:ref:`Section: Using Strings` 
-*:ref:`Section: Modifying string data` 
-*:ref:`Section: Text Analysis` 
-
-
-:ref:`Chapter: Numbers` 
-    :ref:`Section: Using numbers` 
-    :ref:`Section: Random numbers` 
-    :ref:`Section: Mathematical problems` 
-
-:ref:`Chapter: Aggregate Data Types` 
-    :ref:`Section: Manipulating lists and arrays` 
-    :ref:`Section: Information retrieval` 
-    :ref:`Section: Multi-dimensional data` 
-
 Chapter: Strings
 ----------------
 
@@ -503,6 +487,7 @@ An anagram is a word, phrase, or name formed by rearranging the letters of anoth
     end
 
     assert (normalize(str1) == normalize(str2)).
+Output:
 ::
     Anagrams
 
@@ -535,6 +520,7 @@ to left.
     end
 
     assert (clean_str == clean_str @flip()).
+Output:
 ::
     Palindromic
 

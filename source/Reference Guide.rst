@@ -178,7 +178,7 @@ In Asteroid, both `lists` and `strings,` are treated like objects. Due to this, 
 Lists
 ^^^^^
 
-As mentioned in [this section of the User Guide](https://github.com/lutzhamel/asteroid/blob/master/Asteroid%20User%20Guide.md#the-basics), a **list** is a structured data type that consists of square brackets enclosing comma-separated values. Lists can be modified after their creation.
+As mentioned in `this section of the User Guide <https://github.com/lutzhamel/asteroid/blob/master/Asteroid%20User%20Guide.md#the-basics>`_, a **list** is a structured data type that consists of square brackets enclosing comma-separated values. Lists can be modified after their creation.
 ::
   list_member_functions.update({
       'length'    : '__list_length__',
@@ -202,7 +202,7 @@ As mentioned in [this section of the User Guide](https://github.com/lutzhamel/as
       })
   ".
 
-(For implementation details, see Python lists [here](https://docs.python.org/3/tutorial/datastructures.html).)
+(For implementation details, see Python lists `here <https://docs.python.org/3/tutorial/datastructures.html>`_.)
 -->
 
 * Function `length` returns the number of elements within that list.

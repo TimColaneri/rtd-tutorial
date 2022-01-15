@@ -1,9 +1,4 @@
 
-<!-- Note: functions in Asteroid can have different kinds of input
-     constellations which is indicated using the `with` and `orwith` keywords.
-     When writing documentation you will need to document all the different input
-     constellations.  See the `range` function below. -->
-
 Asteroid Reference Guide
 ========================
 
@@ -175,8 +170,6 @@ function can only be applied to lists, strings, tuples, or structures.
   1. `(start:%integer,stop:%integer,inc:%integer)` returns list `[start to stop-1 step inc]`.
   1. `(stop:%integer)` returns list `[0 to stop-1]`.
 
-
-
 List and String Objects
 -----------------------
 
@@ -186,10 +179,6 @@ Lists
 ^^^^^
 
 As mentioned in [this section of the User Guide](https://github.com/lutzhamel/asteroid/blob/master/Asteroid%20User%20Guide.md#the-basics), a **list** is a structured data type that consists of square brackets enclosing comma-separated values. Lists can be modified after their creation.
-
-<!-- Note: the short names in the list below is what users will be
-    seeing, the long names are internal names.  So the documentation should
-    be written using the short names.
 ::
   list_member_functions.update({
       'length'    : '__list_length__',
@@ -215,11 +204,6 @@ As mentioned in [this section of the User Guide](https://github.com/lutzhamel/as
 
 (For implementation details, see Python lists [here](https://docs.python.org/3/tutorial/datastructures.html).)
 -->
-
-<!-- Note: the member functions to objects have changed.  We no longer
-     use the `self` variable.  Make sure that you are using the latest version
-     of the `prologue.ast` file. I have edited the first couple of Functions
-     so you can see what I mean. -->
 
 * Function `length` returns the number of elements within that list.
 * Function `append`, given `(item)`, adds that item to the end of a list.
@@ -254,7 +238,7 @@ As mentioned in [this section of the User Guide](https://github.com/lutzhamel/as
 as the return value from this function.
 
 
-See the [Prologue module](https://github.com/lutzhamel/asteroid/blob/master/code/modules/prologue.ast) for more on all the functions above.
+See the `Prologue module <https://github.com/lutzhamel/asteroid/blob/master/code/modules/prologue.ast>`_ for more on all the functions above.
 
 
 Strings
@@ -262,29 +246,27 @@ Strings
 
 A string is a sequence of characters that can be used as a variable or a literal constant.
 
-<!-- Note: this is not a member function and should be documented as part of the `type` module
-* Function `gettype` will get the type of `x` as an Asteroid string. (See the module [Type.ast](https://github.com/lutzhamel/asteroid/blob/master/code/modules/type.ast) for more on this function.) -->
+* Function `gettype` will get the type of `x` as an Asteroid string. (See the module `Type.ast <https://github.com/lutzhamel/asteroid/blob/master/code/modules/type.ast>`_ for more on this function.) -->
 
-<!-- Note: This should not be exposed to the user, this is an internal data structure
 * The following `string_member_functions`,
+::
+  escape
+  "
+  global string_member_functions
 
-            escape
-            "
-            global string_member_functions
-
-            string_member_functions.update({
-            'length'    : '__string_length__',
-            'explode'   : '__string_explode__',
-            'trim'      : '__string_trim__',
-            'replace'   : '__string_replace__',
-            'split'     : '__string_split__',
-            'toupper'   : '__string_toupper__',
-            'tolower'   : '__string_tolower__',
-            'index'     : '__string_index__',
-            'flip'      : '__string_flip__',
-            })
-            "
-(For implementation details, see Python lists [here](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str).)
+  string_member_functions.update({
+  'length'    : '__string_length__',
+  'explode'   : '__string_explode__',
+  'trim'      : '__string_trim__',
+  'replace'   : '__string_replace__',
+  'split'     : '__string_split__',
+  'toupper'   : '__string_toupper__',
+  'tolower'   : '__string_tolower__',
+  'index'     : '__string_index__',
+  'flip'      : '__string_flip__',
+  })
+  "
+(For implementation details, see Python lists `here <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_.)
 -->
 * Function `length` returns the number of characters within that string.
 * Function `explode`, turns a string into a list of characters.
@@ -316,7 +298,7 @@ a list. It returns an integer index into the string or `none` if `item` was not 
 
 * Function `flip` explodes reverses a string.
 
-See the [Prologue module](https://github.com/lutzhamel/asteroid/blob/master/code/modules/prologue.ast)  for more on all the functions above.
+See the `Prologue module <https://github.com/lutzhamel/asteroid/blob/master/code/modules/prologue.ast>`_  for more on all the functions above.
 
 
 Asteroid Modules
@@ -327,7 +309,7 @@ There are a variety of useful modules that can be loaded into an Asteroid progra
 Bitwise
 ^^^^^^^
 
-The [bitwise](https://github.com/lutzhamel/asteroid/blob/master/code/modules/bitwise.ast) module defines Bitwise operations. It supports the following functions,
+The `bitwise <https://github.com/lutzhamel/asteroid/blob/master/code/modules/bitwise.ast>`_ module defines Bitwise operations. It supports the following functions,
 * Function `band` can be called with the input `(x:%integer, y:%integer)`, and performs the Bitwise AND operation.
 * Function `bor` can be called with the input `(x:%integer, y:%integer)`, and performs the Bitwise OR operation.
 * Function `bnot` can be called with the input `(x:%integer)`, and performs the Bitwise NOT operation.
@@ -343,7 +325,7 @@ The [bitwise](https://github.com/lutzhamel/asteroid/blob/master/code/modules/bit
 Hash
 ^^^^
 
-The [hash](https://github.com/lutzhamel/asteroid/blob/master/code/modules/hash.ast) module implements a hash for name-values pairs. It supports the following functions,
+The `hash <https://github.com/lutzhamel/asteroid/blob/master/code/modules/hash.ast>`_ module implements a hash for name-values pairs. It supports the following functions,
 * Function `insert`, given the input `(name,value)`, will insert a given name-value pair into the table.
 * Function `get`, given `name`, will return the `value` associated with the given `name` as long as it can be found otherwise an exception will be thrown.
 * Function `aslist` returns the hash as a list of name-value pairs.
@@ -351,7 +333,7 @@ The [hash](https://github.com/lutzhamel/asteroid/blob/master/code/modules/hash.a
 IO
 ^^
 
-The [io](https://github.com/lutzhamel/asteroid/blob/master/code/modules/io.ast) module implements Asteroid's I/O system. The module defines three default streams,
+The `io <https://github.com/lutzhamel/asteroid/blob/master/code/modules/io.ast>`_ module implements Asteroid's I/O system. The module defines three default streams,
 1. `__STDIN__` - the standard input stream.
 1. `__STDOUT__` - the standard output stream.
 1. `__STDERR__` - the standard error stream.
@@ -371,7 +353,7 @@ Furthermore, the module supports the following functions,
 Math
 ^^^^
 
-The [math](https://github.com/lutzhamel/asteroid/blob/master/code/modules/math.ast) module implements mathematical constants and operators. It supports the following functions,
+The `math <https://github.com/lutzhamel/asteroid/blob/master/code/modules/math.ast>`_ module implements mathematical constants and operators. It supports the following functions,
 * Function `exp`, given `x:%integer`, returns e raised to the power `x`, where e = 2.718281… is the base of natural logarithms.
 * Function `log` can be called with two different argument setups,
   1. If only one argument, `(x)`, is input, this returns the natural logarithm of x (to base e).
@@ -406,12 +388,12 @@ The [math](https://github.com/lutzhamel/asteroid/blob/master/code/modules/math.a
 Pick
 ^^^^
 
-The [pick](https://github.com/lutzhamel/asteroid/blob/master/code/modules/pick.ast) module implements the to randomly pick objects from a list of objects. A `Pick` object contains a list of items that can be randomly picked from using the `pick` member function. The `pick` function can be called with `n:%integer` and returns a list of `n` randomly picked objects from the object list.
+The `pick <https://github.com/lutzhamel/asteroid/blob/master/code/modules/pick.ast>`_ module implements the to randomly pick objects from a list of objects. A `Pick` object contains a list of items that can be randomly picked from using the `pick` member function. The `pick` function can be called with `n:%integer` and returns a list of `n` randomly picked objects from the object list.
 
 Random
 ^^^^^^
 
-The [random](https://github.com/lutzhamel/asteroid/blob/master/code/modules/random.ast) module implements the `random` numbers. Using the functions included in this module will return a random value within a given range or interval. It supports the following functions,
+The `random <https://github.com/lutzhamel/asteroid/blob/master/code/modules/random.ast>`_ module implements the `random` numbers. Using the functions included in this module will return a random value within a given range or interval. It supports the following functions,
 * Function `random`, given the input `none`, returns a random floating point number in the range `[0.0, 1.0)`.
 * Function `randint` returns a random value N in the interval lo <= N <= hi. The exact random value output depends on the types of the values specifying the interval. It can be called with two different number interval inputs:
   1. `(lo:%integer,hi:%integer)`
@@ -423,7 +405,7 @@ The [random](https://github.com/lutzhamel/asteroid/blob/master/code/modules/rand
 Set
 ^^^
 
-The [set](https://github.com/lutzhamel/asteroid/blob/master/code/modules/set.ast) module implements Asteroid sets as lists. Unlike lists, sets do not have repeated members. It supports the following functions,
+The `set <https://github.com/lutzhamel/asteroid/blob/master/code/modules/set.ast>`_ module implements Asteroid sets as lists. Unlike lists, sets do not have repeated members. It supports the following functions,
 * Function `toset`, given `(lst:%list)`, converts the input list into a set.
 * Function `sdiff`, given `(a:%list,b:%list)`, computes the difference set between the two set `a` and `b`.
 * Function `sintersection`, given `(a:%list,b:%list)`, finds the intersection between  sets `a` and `b`.
@@ -433,7 +415,7 @@ The [set](https://github.com/lutzhamel/asteroid/blob/master/code/modules/set.ast
 Sort
 ^^^^
 
-The [sort](https://github.com/lutzhamel/asteroid/blob/master/code/modules/sort.ast) module defines a parameterized `sort` function over a list.  The `sort` function makes use of a user-defined order predicate on the list's elements to perform the sort. The `Quicksort` is the underlying sort algorithm. See the module for an example of it in action. Example:
+The `sort <https://github.com/lutzhamel/asteroid/blob/master/code/modules/sort.ast>`_ module defines a parameterized `sort` function over a list.  The `sort` function makes use of a user-defined order predicate on the list's elements to perform the sort. The `Quicksort` is the underlying sort algorithm. See the module for an example of it in action. Example:
 ""
   sort(
     (lambda with (x,y) do return true if x<y else false),
@@ -446,7 +428,7 @@ return the sorted list,
 Stream
 ^^^^^^
 
-The [stream](https://github.com/lutzhamel/asteroid/blob/master/code/modules/stream.ast) module implements a `Stream` structure. The `Stream` structure allows the developer to turn any list into a stream supporting interface functions like `peeking` ahead or `rewinding` the stream.  In order
+The `stream <https://github.com/lutzhamel/asteroid/blob/master/code/modules/stream.ast>`_ module implements a `Stream` structure. The `Stream` structure allows the developer to turn any list into a stream supporting interface functions like `peeking` ahead or `rewinding` the stream.  In order
 to construct a stream call the constructor on a list, e.g., `Stream([1,2,3])`.  The following stream
 interface functions are available,
 
@@ -463,7 +445,7 @@ does not contain any further elements for processing. Otherwise it returns `fals
 Type
 ^^^^
 
-The [type](https://github.com/lutzhamel/asteroid/blob/master/code/modules/type.ast) module defines type related functions and structures.
+The `type <https://github.com/lutzhamel/asteroid/blob/master/code/modules/type.ast>`_ module defines type related functions and structures.
 
 **Type Conversion**
 
@@ -493,7 +475,7 @@ The [type](https://github.com/lutzhamel/asteroid/blob/master/code/modules/type.a
 Util
 ^^^^
 
-The [util](https://github.com/lutzhamel/asteroid/blob/master/code/modules/util.ast) module defines utility functions and structures that don't really fit into any other modules. It supports the following functions,
+The `util <https://github.com/lutzhamel/asteroid/blob/master/code/modules/util.ast>`_ module defines utility functions and structures that don't really fit into any other modules. It supports the following functions,
 
 * Function `exit` exits the program. It can be called with two inputs,
   1. `none`
@@ -510,7 +492,7 @@ The [util](https://github.com/lutzhamel/asteroid/blob/master/code/modules/util.a
 Vector
 ^^^^^^
 
-The [vector](https://github.com/lutzhamel/asteroid/blob/master/code/modules/vector.ast) defines functions useful for vector arithmetic. It supports the following functions.  Here `a` and `b` are vectors implemented as lists,
+The `vector <https://github.com/lutzhamel/asteroid/blob/master/code/modules/vector.ast>`_ defines functions useful for vector arithmetic. It supports the following functions.  Here `a` and `b` are vectors implemented as lists,
 
 * Function `vadd`, given the input `(a,b)`, returns a vector that contains the element by element sum of the input vectors.
 * Function `vsub`, given the input `(a,b)`, returns the element by element difference vector.

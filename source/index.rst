@@ -17,3 +17,4 @@ Contents
    Installing and Running
    Asteroid User Guide
    Reference Guide
+   Asteroid in Action

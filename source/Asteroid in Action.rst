@@ -1,7 +1,7 @@
 Asteroid in Action
 ##################
 
-This document was inspired by Andrew Shitov's excellent book [Using Raku: 100 Programming Challenges Solved with the Brand-New Raku Programming Language](https://andrewshitov.com/wp-content/uploads/2020/01/Using-Raku.pdf).  Here of course we use Asteroid to solve these programming challenges. The OO challenges are lifted from the [hackerrank.com](https://www.hackerrank.com/domains/java/oop/difficulty/all/page/1) website.
+This document was inspired by Andrew Shitov's excellent book `Using Raku: 100 Programming Challenges Solved with the Brand-New Raku Programming Language <https://andrewshitov.com/wp-content/uploads/2020/01/Using-Raku.pdf>`_.  Here of course we use Asteroid to solve these programming challenges. The OO challenges are lifted from the `hackerrank.com <https://www.hackerrank.com/domains/java/oop/difficulty/all/page/1>`_ website.
 
 Table of Contents
 -----------------
@@ -33,7 +33,6 @@ The canonical `Hello, World!` program.  The easiest way to write this in Asteroi
     load system "io".
 
     println "Hello, World!".
-
 ::
     Hello, World!
 
@@ -45,34 +44,27 @@ Challenge: Greet a person
 > Ask a user for their name and greet them by printing ‘Hello, <Name\>!’
 
 Here is our first solution using a separate function for each of the steps,   
+::
+    load system "io".
 
+    print ("Enter your name: ").
+    let name = input().
+    print ("Hello, "+name+"!").
 
-```
-load system "io".
-
-print ("Enter your name: ").
-let name = input().
-print ("Hello, "+name+"!").
-```
 
 Letting the function `input` do the prompting,
+::
+    load system "io".
 
+    let name = input("Enter your name: ").
+    print ("Hello, "+name+"!").
 
-```
-load system "io".
-
-let name = input("Enter your name: ").
-print ("Hello, "+name+"!").
-```
 
 Doing everything in one step,
+::
+    load system "io".
 
-
-```
-load system "io".
-
-print ("Hello, "+input("Enter your name: ")+"!").
-```
+    print ("Hello, "+input("Enter your name: ")+"!").
 
 Challenge: String length
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -80,27 +72,21 @@ Challenge: String length
 > Print the length of a string.
 
 In order to print the length of a string we can use the function `len` available in the `util` module,
+::
+    load system "io".
+    load system "util".
 
-
-```
-load system "io".
-load system "util".
-
-println (len("Hello!")).
-```
-
+    println (len("Hello!")).
+::
     6
 
 
 We can also use the string member function `length` in order to compute the length of the string,
+::
+    load system "io".
 
-
-```
-load system "io".
-
-println ("Hello!" @length()).
-```
-
+    println ("Hello!" @length()).
+::
     6
 
 
@@ -113,25 +99,24 @@ In order to accomplish this we take advantage of the string `explode` function a
 Finally we use the `reduce` function to map a list with repeated digits to a list with unique digits,
 
 
-```
-load system "io".
+::
+    load system "io".
 
-function unique with (x,y) do
-    if not (x @member(y)) do
-        return x @append(y).
-    else do
-        return x.
+    function unique with (x,y) do
+        if not (x @member(y)) do
+            return x @append(y).
+        else do
+            return x.
+        end
     end
-end
 
-let digits = "332211" @explode()
-                      @sort()
-                      @reduce(unique,[]).
-println digits.
+    let digits = "332211" @explode()
+                        @sort()
+                        @reduce(unique,[]).
+    println digits.
 
-assert(digits == ["1","2","3"]).
-```
-
+    assert(digits == ["1","2","3"]).
+::
     [1,2,3]
 
 
@@ -148,17 +133,16 @@ Challenge: Reverse a string
 We use the `explode` function to turn a string into a list of characters. Then, we reverse the list and turn it back into a string using the `join` function,
 
 
-```
-load system "io".
+::
+    load system "io".
 
-let str = "Hello, World!" @explode()
-                          @reverse()
-                          @join("").
-println str.
+    let str = "Hello, World!" @explode()
+                            @reverse()
+                            @join("").
+    println str.
 
-assert(str == "!dlroW ,olleH").
-```
-
+    assert(str == "!dlroW ,olleH").
+::
     !dlroW ,olleH
 
 
@@ -168,16 +152,15 @@ Challenge: Removing blanks from a string
 > Remove leading, trailing, and double spaces from a given string.
 
 
-```
-load system "io".
+::
+    load system "io".
 
-let str = "   Hello  ,   World    !   " @trim()
-                                        @replace("  ","").
-println str.
+    let str = "   Hello  ,   World    !   " @trim()
+                                            @replace("  ","").
+    println str.
 
-assert(str == "Hello, World!").
-```
-
+    assert(str == "Hello, World!").
+::
     Hello, World!
 
 
@@ -191,31 +174,30 @@ Names created in this style are built of several words, each of which starts
 with a capital letter.
 
 
-```
-load system "io".
+::
+    load system "io".
 
-function title with w do
-    let letter_list = w @tolower()
-                        @explode().
-    let first_letter = letter_list @0
-                                   @toupper().
-    if letter_list @length() > 1 do
-        let title_case = ([first_letter] + letter_list @[1 to letter_list@length()-1]) @join("").
-    else
-        let title_case = first_letter.
+    function title with w do
+        let letter_list = w @tolower()
+                            @explode().
+        let first_letter = letter_list @0
+                                    @toupper().
+        if letter_list @length() > 1 do
+            let title_case = ([first_letter] + letter_list @[1 to letter_list@length()-1]) @join("").
+        else
+            let title_case = first_letter.
+        end
+        return title_case.
     end
-    return title_case.
-end
 
-let str = "once upon a time".
-let camel_str = str @split()
-                    @map(title)
-                    @join("").
-println camel_str.
+    let str = "once upon a time".
+    let camel_str = str @split()
+                        @map(title)
+                        @join("").
+    println camel_str.
 
-assert(camel_str == "OnceUponATime").
-```
-
+    assert(camel_str == "OnceUponATime").
+::
     OnceUponATime
 
 
@@ -223,19 +205,16 @@ Challenge: Incrementing filenames
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 > Generate a list of filenames like file1.txt, file2.txt, etc.
+::
+    load system "io".
 
+    let root = "file".
+    let ext = ".txt".
 
-```
-load system "io".
-
-let root = "file".
-let ext = ".txt".
-
-for i in 1 to 5 do
-    println (root+i+ext).
-end
-```
-
+    for i in 1 to 5 do
+        println (root+i+ext).
+    end
+::
     file1.txt
     file2.txt
     file3.txt

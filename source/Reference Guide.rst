@@ -191,27 +191,27 @@ As mentioned in [this section of the User Guide](https://github.com/lutzhamel/as
     seeing, the long names are internal names.  So the documentation should
     be written using the short names.
 ::
-      list_member_functions.update({
-          'length'    : '__list_length__',
-          'append'    : '__list_append__',
-          'extend'    : '__list_extend__',
-          'insert'    : '__list_insert__',
-          'remove'    : '__list_remove__',
-          'pop'       : '__list_pop__',
-          'clear'     : '__list_clear__',
-          'index'     : '__list_index__',
-          'count'     : '__list_count__',
-          'sort'      : '__list_sort__',
-          'reverse'   : '__list_reverse__',
-          'copy'      : '__list_copy__',
-          'shuffle'   : '__list_shuffle__',
-          'map'       : '__list_map__',
-          'reduce'    : '__list_reduce__',
-          'filter'    : '__list_filter__',
-          'member'    : '__list_member__',
-          'join'      : '__list_join__',
-          })
-      ".
+  list_member_functions.update({
+      'length'    : '__list_length__',
+      'append'    : '__list_append__',
+      'extend'    : '__list_extend__',
+      'insert'    : '__list_insert__',
+      'remove'    : '__list_remove__',
+      'pop'       : '__list_pop__',
+      'clear'     : '__list_clear__',
+      'index'     : '__list_index__',
+      'count'     : '__list_count__',
+      'sort'      : '__list_sort__',
+      'reverse'   : '__list_reverse__',
+      'copy'      : '__list_copy__',
+      'shuffle'   : '__list_shuffle__',
+      'map'       : '__list_map__',
+      'reduce'    : '__list_reduce__',
+      'filter'    : '__list_filter__',
+      'member'    : '__list_member__',
+      'join'      : '__list_join__',
+      })
+  ".
 
 (For implementation details, see Python lists [here](https://docs.python.org/3/tutorial/datastructures.html).)
 -->

@@ -29,11 +29,11 @@ Challenge: Hello, World!
 > Print ‘Hello, World!’
 
 The canonical `Hello, World!` program.  The easiest way to write this in Asteroid is,
-::
+.. code-block::
     load system "io".
 
     println "Hello, World!".
-    
+
 Output:
 ::
     Hello, World!

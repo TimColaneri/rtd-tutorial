@@ -17,7 +17,6 @@ where `<syntactic unit>*` means zero or more occurrences of the syntactic unit a
 `<syntactic unit>+` means one or more occurrences of the syntactic unit. Furthermore,
 `<syntactic unit>?` means that the syntactic unit is optional.  Simple terminals
 are written in quotes.
-
 ::
   ////////////////////////////////////////////////////////////////////////////////////////
   // statements

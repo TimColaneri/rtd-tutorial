@@ -267,7 +267,7 @@ A string is a sequence of characters that can be used as a variable or a literal
     })
     "
 (For implementation details, see Python lists `here <https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str>`_.)
--->
+
 * Function `length` returns the number of characters within that string.
 * Function `explode`, turns a string into a list of characters.
 * Function `trim`, given the input `(what:%string)`, returns a copy of the string with the leading and trailing characters removed. The `what` argument is a string specifying the set of characters to be removed. If omitted or none, the `what` argument defaults to removing whitespace. The `what` argument is not a prefix or suffix; rather, all combinations of its values are stripped.
@@ -310,6 +310,7 @@ Bitwise
 ^^^^^^^
 
 The `bitwise <https://github.com/lutzhamel/asteroid/blob/master/code/modules/bitwise.ast>`_ module defines Bitwise operations. It supports the following functions,
+
 * Function `band` can be called with the input `(x:%integer, y:%integer)`, and performs the Bitwise AND operation.
 * Function `bor` can be called with the input `(x:%integer, y:%integer)`, and performs the Bitwise OR operation.
 * Function `bnot` can be called with the input `(x:%integer)`, and performs the Bitwise NOT operation.
@@ -326,6 +327,7 @@ Hash
 ^^^^
 
 The `hash <https://github.com/lutzhamel/asteroid/blob/master/code/modules/hash.ast>`_ module implements a hash for name-values pairs. It supports the following functions,
+
 * Function `insert`, given the input `(name,value)`, will insert a given name-value pair into the table.
 * Function `get`, given `name`, will return the `value` associated with the given `name` as long as it can be found otherwise an exception will be thrown.
 * Function `aslist` returns the hash as a list of name-value pairs.
@@ -334,6 +336,7 @@ IO
 ^^
 
 The `io <https://github.com/lutzhamel/asteroid/blob/master/code/modules/io.ast>`_ module implements Asteroid's I/O system. The module defines three default streams,
+
 1. `__STDIN__` - the standard input stream.
 1. `__STDOUT__` - the standard output stream.
 1. `__STDERR__` - the standard error stream.

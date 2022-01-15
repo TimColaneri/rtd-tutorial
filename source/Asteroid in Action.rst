@@ -230,29 +230,28 @@ Challenge: Random passwords
 In our solution we take advantage of Asteroid's `Pick` object.  The `Pick` object maintains a list of items that we can randomly select from using the `pick` member function.  As input to the `Pick` object, we compute a bunch of lists of characters that are useful for password construction.  The function `achar` converts a decimal ASCII code to a single character string.
 
 
-```
-load system "io".
-load system "util".
-load system "pick".
+::
+    load system "io".
+    load system "util".
+    load system "pick".
 
-seed(42).
+    seed(42).
 
--- make up lists of symbols useful for password construction
-let int_list = [0 to 9] @map(tostring).
-let lc_list = [97 to 122] @map(achar). -- lower case characters
-let uc_list = [65 to 90] @map(achar). --upper case characters
-let sp_list = ["!","_","#","$","%","*"].
--- build the overall pick list of symbols
-let pick_list = int_list+lc_list+uc_list+sp_list.
+    -- make up lists of symbols useful for password construction
+    let int_list = [0 to 9] @map(tostring).
+    let lc_list = [97 to 122] @map(achar). -- lower case characters
+    let uc_list = [65 to 90] @map(achar). --upper case characters
+    let sp_list = ["!","_","#","$","%","*"].
+    -- build the overall pick list of symbols
+    let pick_list = int_list+lc_list+uc_list+sp_list.
 
--- generate the password and print it.
-let pwd = Pick pick_list @pick(15)
-                         @join("").
-println pwd.
+    -- generate the password and print it.
+    let pwd = Pick pick_list @pick(15)
+                            @join("").
+    println pwd.
 
-assert (pwd == "e3zvshdbS43brt#")
-```
-
+    assert (pwd == "e3zvshdbS43brt#")
+::
     e3zvshdbS43brt#
 
 
@@ -264,42 +263,39 @@ Challenge: DNA-to-RNA transcription
 We’ll not dig deep into the biology aspect of the problem. For us, it is important that the DNA is a string containing the four letters A, C, G, and T,
 and the RNA is a string of A, C, G, and U. The transformation from DNA
 to RNA happens according to the following table:
-```
-DNA: A C G T
-RNA: U G C A
-```
+::
+    DNA: A C G T
+    RNA: U G C A
+
 We will solve this programming problem using Asteroid's first-class patterns. We could have solved this with just testing equality on DNA characters. However, using first-class patterns is more general and can be applied to problems with a more structured mapping relationship.
+::
+    load system "io".
 
+    let dna2rna_table =
+        [
+        ("A","U"),
+        ("C","G"),
+        ("G","C"),
+        ("T","A")
+        ].
 
-```
-load system "io".
-
-let dna2rna_table =
-    [
-    ("A","U"),
-    ("C","G"),
-    ("G","C"),
-    ("T","A")
-    ].
-
-function dna2rna with x do
-    for (dna,rna) in dna2rna_table do
-        if x is *dna do
-            return rna.
+    function dna2rna with x do
+        for (dna,rna) in dna2rna_table do
+            if x is *dna do
+                return rna.
+            end
         end
+        throw Error("unknown dna char "+x).
     end
-    throw Error("unknown dna char "+x).
-end
 
-let dna_seq = "ACCATCAGTC".
-let rna_seq = dna_seq @explode()
-                      @map(dna2rna)
-                      @join("").
-println rna_seq.
+    let dna_seq = "ACCATCAGTC".
+    let rna_seq = dna_seq @explode()
+                        @map(dna2rna)
+                        @join("").
+    println rna_seq.
 
-assert(rna_seq == "UGGUAGUCAG").
-```
-
+    assert(rna_seq == "UGGUAGUCAG").
+::
     UGGUAGUCAG
 
 
@@ -314,48 +310,45 @@ positions earlier or later.
 For example, if N is 4, then the letter e becomes a, f is transformed to b,
 etc. The alphabet is looped so that z becomes v, and letters a to d become
 w to z.
+::
+    load system "io".
+    load system "util".
 
+    let encode_table = [119 to 122] @map(achar) + [97 to 118] @map(achar).
 
-```
-load system "io".
-load system "util".
-
-let encode_table = [119 to 122] @map(achar) + [97 to 118] @map(achar).
-
-function encode with (v:%string) %if len(v) == 1 do
-    -- only lowercase letters are encoded
-    if not (ascii(v) in [97 to 122]) do
-        return v.
-    else
-        return encode_table @(ascii(v)-ascii("a")).
+    function encode with (v:%string) %if len(v) == 1 do
+        -- only lowercase letters are encoded
+        if not (ascii(v) in [97 to 122]) do
+            return v.
+        else
+            return encode_table @(ascii(v)-ascii("a")).
+        end
     end
-end
 
-function decode with (v:%string) %if len(v) == 1 do
-    -- only lowercase letters are decoded
-    if not (ascii(v) in [97 to 122]) do
-        return v.
-    else
-        return encode_table @(ascii(v)-ascii("w")+4).
+    function decode with (v:%string) %if len(v) == 1 do
+        -- only lowercase letters are decoded
+        if not (ascii(v) in [97 to 122]) do
+            return v.
+        else
+            return encode_table @(ascii(v)-ascii("w")+4).
+        end
     end
-end
 
-let message = "hello, world!"
-let secret = message @explode()
-                     @map(encode)
-                     @join("").
-println secret.
+    let message = "hello, world!"
+    let secret = message @explode()
+                        @map(encode)
+                        @join("").
+    println secret.
 
-assert (secret == "dahhk, sknhz!")
+    assert (secret == "dahhk, sknhz!")
 
-let decoded_msg = secret @explode()
-                         @map(decode)
-                         @join("").
-println decoded_msg.
+    let decoded_msg = secret @explode()
+                            @map(decode)
+                            @join("").
+    println decoded_msg.
 
-assert (decoded_msg == "hello, world!")
-```
-
+    assert (decoded_msg == "hello, world!")
+::
     dahhk, sknhz!
     hello, world!
 
@@ -369,20 +362,19 @@ Challenge: Plural Endings
 > Put a noun in the correct form — singular or plural — depending on the number next to it.
 
 In program outputs, it is often required to print some number followed by a noun, for example:
-```
-10 files found
-```
+::
+    10 files found
+
 If there is only one file, then the phrase should be `1 file found` instead.
 
 
-```
-load system "io".
+::
+    load system "io".
 
-for n in 0 to 5 do
-    println (n+" file"+("s " if n>1 or n==0 else " ")+"found").
-end
-```
-
+    for n in 0 to 5 do
+        println (n+" file"+("s " if n>1 or n==0 else " ")+"found").
+    end
+::
     0 files found
     1 file found
     2 files found

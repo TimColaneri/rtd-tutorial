@@ -249,7 +249,7 @@ A string is a sequence of characters that can be used as a variable or a literal
 * Function `gettype` will get the type of `x` as an Asteroid string. (See the module `Type.ast <https://github.com/lutzhamel/asteroid/blob/master/code/modules/type.ast>`_ for more on this function.) -->
 
 * The following `string_member_functions`,
-|::
+| ::
   escape
   "
   global string_member_functions

@@ -1339,7 +1339,8 @@ The Module System
 
 A module in Asteroid is a file with a set of valid Asteroid statements.  You can load this file into other Asteroid code with the `load "<filename>".` statement.  In the current version of Asteroid modules do not have a separate name space; symbols from a module are entered into Asteroid's global name space.
 
-The search strategy for a module to be loaded is as follows,
+The search strategy for a module to be loaded is as follows, 
+
 #. raw module name - could be an absolute path 
 #. search in current directory (path[1]) 
 #. search in directory where Asteroid is installed (path[0]) 

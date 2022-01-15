@@ -203,7 +203,7 @@ As mentioned in `this section of the User Guide <https://github.com/lutzhamel/as
   ".
 
 (For implementation details, see Python lists `here <https://docs.python.org/3/tutorial/datastructures.html>`_.)
--->
+
 
 * Function `length` returns the number of elements within that list.
 * Function `append`, given `(item)`, adds that item to the end of a list.
@@ -248,8 +248,7 @@ A string is a sequence of characters that can be used as a variable or a literal
 
 * Function `gettype` will get the type of `x` as an Asteroid string. (See the module `Type.ast <https://github.com/lutzhamel/asteroid/blob/master/code/modules/type.ast>`_ for more on this function.) -->
 
-* The following `string_member_functions`,
-::
+* The following `string_member_functions`,:: 
   escape
   "
   global string_member_functions

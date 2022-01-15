@@ -6,20 +6,20 @@ This document was inspired by Andrew Shitov's excellent book `Using Raku: 100 Pr
 Table of Contents
 -----------------
 
-:ref:`Chapter: Strings`
-:ref:`Section: Using Strings`
-:ref:`Section: Modifying string data`
-:ref:`Section: Text Analysis`
+:ref:`Chapter: Strings` 
+    :ref:`Section: Using Strings` 
+    :ref:`Section: Modifying string data` 
+    :ref:`Section: Text Analysis` 
 
-[Chapter: Numbers](#numbers)<br>
-  [Section: Using numbers](#sectionusingnumbers)<br>
-  [Section: Random numbers](#randomnumbers)<br>
-  [Section: Mathematical problems](#mathproblems)<br>
+:ref:`Chapter: Numbers` 
+    :ref:`Section: Using numbers` 
+    :ref:`Section: Random numbers` 
+    :ref:`Section: Mathematical problems` 
 
-[Chapter: Aggregate Data Types](#datatypes)<br>
-  [Section: Manipulating lists and arrays](#listsandarrays)<br>
-  [Section: Information retrieval](#informationretrieval)<br>
-  [Section: Multi-dimensional data](#multidimensionaldata)<br>
+:ref:`Chapter: Aggregate Data Types` 
+    :ref:`Section: Manipulating lists and arrays` 
+    :ref:`Section: Information retrieval` 
+    :ref:`Section: Multi-dimensional data` 
 
 Chapter: Strings
 ----------------

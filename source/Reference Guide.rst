@@ -28,8 +28,8 @@ are written in quotes.
   stmt_list
     : stmt*
 
-  stmt
-    : '.' // NOOP
+  stmt  
+    : '.' // NOOP  
     | LOAD SYSTEM? STRING '.'?
     | GLOBAL id_list '.'?
     | NONLOCAL id_list '.'?

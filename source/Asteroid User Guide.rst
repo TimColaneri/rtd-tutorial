@@ -4,7 +4,7 @@ Asteroid User Guide
 Introduction
 ------------
 
-Asteroid is a multi-paradigm programming language heavily influenced by [Python](https://www.python.org), [Rust](https://www.rust-lang.org), [ML](https://www.smlnj.org), and [Prolog](http://www.swi-prolog.org), that makes pattern matching one of its core computational mechanisms.  This is often called *pattern-matching oriented programming*.
+Asteroid is a multi-paradigm programming language heavily influenced by `Python <https://www.python.org>`_, `Rust <https://www.rust-lang.org>`_, `ML <https://www.smlnj.org>`_, and `Prolog <http://www.swi-prolog.org>`_, that makes pattern matching one of its core computational mechanisms.  This is often called *pattern-matching oriented programming*.
 
 In this document we describe the major features of Asteroid and give plenty of examples.  If you have used a programming language like Python or JavaScript before, then Asteroid should appear very familiar.  However, there are some features which differ drastically from other programming languages due to the core pattern-matching programming
 paradigm.  Here are just two examples:
@@ -247,7 +247,6 @@ Tuples
 As we saw earlier, the `tuple` is another fundamental, built-in data structure that can be found in Asteroid.
 
 Below is an example of a tuple declaration and access.
-
 ::
     load system "io".       -- load the io module so we can print
     let a = (1,2,3).  	-- construct tuple a
@@ -292,7 +291,6 @@ You can introduce custom data structures using the `structure` keyword.  These c
 a *default constructor* for a structure.  That constructor copies the arguments given to it into the
 data member fields of the structure in the order that the data members appear in the
 structure definition and as they appear in the parameter list of the constructor. Here is a simple example,
-
 ::
     load system "io".
 
@@ -1170,7 +1168,7 @@ example,
     end
 
 The output is,
-
+::
     integer division or modulo by zero
 
 
@@ -1342,10 +1340,10 @@ The Module System
 A module in Asteroid is a file with a set of valid Asteroid statements.  You can load this file into other Asteroid code with the `load "<filename>".` statement.  In the current version of Asteroid modules do not have a separate name space; symbols from a module are entered into Asteroid's global name space.
 
 The search strategy for a module to be loaded is as follows,
-1. raw module name - could be an absolute path
-1. search in current directory (path[1])
-1. search in directory where Asteroid is installed (path[0])
-1. search in subdirectory where Asteroid was started
+#. raw module name - could be an absolute path 
+#. search in current directory (path[1]) 
+#. search in directory where Asteroid is installed (path[0]) 
+#. search in subdirectory where Asteroid was started 
 
 Modules defined by the Asteroid system should be loaded with the keyword `system`
 in order to avoid any clashes with locally defined modules.

@@ -166,9 +166,10 @@ function can only be applied to lists, strings, tuples, or structures.
   It is an error to apply this function to an empty list.
 
 * Function `range` will compute a list of values depending on the input values:
-  1. `(start:%integer,stop:%integer)` returns list `[start to stop-1]`.
-  1. `(start:%integer,stop:%integer,inc:%integer)` returns list `[start to stop-1 step inc]`.
-  1. `(stop:%integer)` returns list `[0 to stop-1]`.
+
+  #. `(start:%integer,stop:%integer)` returns list `[start to stop-1]`.
+  #. `(start:%integer,stop:%integer,inc:%integer)` returns list `[start to stop-1 step inc]`.
+  #. `(stop:%integer)` returns list `[0 to stop-1]`.
 
 List and String Objects
 -----------------------

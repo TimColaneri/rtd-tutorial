@@ -1888,8 +1888,8 @@ Compute the moving average over 100 random values, using a window of size 7 (3 v
 
     plot(dt @[3 to 96],mavg).
 
-![Moving Average](moving-avg.png)
 
+.. image:: moving-avg.png
 
 Challenge: Is an element in a list?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

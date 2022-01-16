@@ -808,7 +808,7 @@ only on the data fields.  The output of the program is,
     Scarlett is 28 years old
 
 Here is a slightly more involved example based on the
-dog example from the [Python documentation](https://docs.python.org/3/tutorial/classes.html).  
+dog example from the `Python documentation <https://docs.python.org/3/tutorial/classes.html>`_.  
 The idea of the dog example is to have a structure that describes dogs by their
 names and the tricks that they can perform.  Tricks can be added to a particular
 dog instance by calling the `add_trick` function.  Rather than using the default

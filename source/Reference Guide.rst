@@ -214,14 +214,16 @@ As mentioned in `this section of the User Guide <https://github.com/lutzhamel/as
 * Function `pop`, given `(ix:%integer)`, removes the item at the given position in the list and returns it. If no index is specified,`a@pop()` removes and returns the last item in the list.
 * Function `clear`, given `(none)`, removes all items from the list.
 * Function `index` returns a zero-based index in the list of the first element whose value is equal to `(item)`. It raises a ValueError exception if there is no such item. The optional arguments `(startix)` and `(endix)` are interpreted as in the slice notation, and are used to limit the search to a particular subsequence of the list. The returned index is computed relative to the beginning of the full sequence rather than the `(startix)` argument.   This function can be called with several input configurations:
-  1. `(item,startix:%integer,endix:%integer)`
-  1. `(item,startix:%integer)`
-  1. `item`
+
+  #. `(item,startix:%integer,endix:%integer)`
+  #. `(item,startix:%integer)`
+  #. `item`
 
 * Function `count`, given `(item)`, returns the number of times `(item)` appears in the list.
 * Function `sort` sorts the items of the list in place. It can be called with several different inputs:
-  1. `(reverse:%boolean)` if the boolean is set to true then the sorted list is reversed.
-  1. `none` returns the reverse list.
+
+  #. `(reverse:%boolean)` if the boolean is set to true then the sorted list is reversed.
+  #. `none` returns the reverse list.
 
 * Function `reverse`, reverses the elements of the list in place.
 * Function `copy`, makes a shallow copy of the list.
@@ -229,8 +231,10 @@ As mentioned in `this section of the User Guide <https://github.com/lutzhamel/as
 * Function `map`, given `(f:%function)`, applies `f` to each element of the list in place. The modified list is returned.
 * Function `reduce` reduces the value of elements in a list. This
   function can be called with several different inputs:
-  1. Input `(f:%function)` returns `value`, such that `value = f(value,this@i)`.
-  1. Input `(f:%function,init)` returns the same format but uses `init` as an initial value.
+
+  #. Input `(f:%function)` returns `value`, such that `value = f(value,this@i)`.
+  #. Input `(f:%function,init)` returns the same format but uses `init` as an initial value.
+
   The first argument to `f` is the accumulator.
 
 * Function `filter`, given `(f:%function)`, constructs an output list from those elements of the list for which `f` returns true. If `f` is none, the identity function is assumed, that is, all elements of the input list that are false are removed.
@@ -286,17 +290,19 @@ different inputs:
   If `sep` is not specified or is None, a different splitting algorithm is applied: runs of consecutive whitespace are regarded as a single separator, and the result will contain no empty strings at the start or end if the string has leading or trailing whitespace. Consequently, splitting an empty string or a string consisting of just whitespace with a None separator returns [].
 
   Function `split` can be called with several different inputs:
-  1. Input `(sep:%string,count:%integer)`
-  |2. Input `(sep:%string)`
-  |3. Input `(none)`
+
+  #. Input `(sep:%string,count:%integer)`
+  #. Input `(sep:%string)`
+  #. Input `(none)`
 
 * Function `toupper`, converts all the lowercase letters in a string to uppercase.
 * Function `tolower`, converts all the uppercase letters in a string to lowercase.
 * Function `index` allows the user to search for a given `item` in
 a list. It returns an integer index into the string or `none` if `item` was not found.  The function can be called with several different inputs:
-  1. Input `(item:%string,startix:%integer,endix:%integer)`
-  1. Input `(item:%string,startix:%integer)`
-  1. Input `(item:%string)`
+
+  #. Input `(item:%string,startix:%integer,endix:%integer)`
+  #. Input `(item:%string,startix:%integer)`
+  #. Input `(item:%string)`
 
 * Function `flip` explodes reverses a string.
 
@@ -339,9 +345,9 @@ IO
 
 The `io <https://github.com/lutzhamel/asteroid/blob/master/code/modules/io.ast>`_ module implements Asteroid's I/O system. The module defines three default streams,
 
-1. `__STDIN__` - the standard input stream.
-1. `__STDOUT__` - the standard output stream.
-1. `__STDERR__` - the standard error stream.
+#. `__STDIN__` - the standard input stream.
+#. `__STDOUT__` - the standard output stream.
+#. `__STDERR__` - the standard error stream.
 
 Furthermore, the module supports the following functions,
 
@@ -361,8 +367,9 @@ Math
 The `math <https://github.com/lutzhamel/asteroid/blob/master/code/modules/math.ast>`_ module implements mathematical constants and operators. It supports the following functions,
 * Function `exp`, given `x:%integer`, returns e raised to the power `x`, where e = 2.718281… is the base of natural logarithms.
 * Function `log` can be called with two different argument setups,
-  1. If only one argument, `(x)`, is input, this returns the natural logarithm of x (to base e).
-  1. If two arguments, `(x,base)`, are input, this returns the logarithm of x to the given base, calculated as log(x)/log(base).
+
+  #. If only one argument, `(x)`, is input, this returns the natural logarithm of x (to base e).
+  #. If two arguments, `(x,base)`, are input, this returns the logarithm of x to the given base, calculated as log(x)/log(base).
 
 * Function `pow`, given `(b,p:%integer)`, returns "b <sup>p</sup>" as long as b is either `real` or `integer`.
 * Function `sqrt`, given `a`, returns its square root as long as `a` is either `real` or `integer`.
@@ -401,9 +408,10 @@ Random
 The `random <https://github.com/lutzhamel/asteroid/blob/master/code/modules/random.ast>`_ module implements the `random` numbers. Using the functions included in this module will return a random value within a given range or interval. It supports the following functions,
 * Function `random`, given the input `none`, returns a random floating point number in the range `[0.0, 1.0)`.
 * Function `randint` returns a random value N in the interval lo <= N <= hi. The exact random value output depends on the types of the values specifying the interval. It can be called with two different number interval inputs:
-  1. `(lo:%integer,hi:%integer)`
-  1. `(lo:%real,hi:%real)`
-  1. Note: any other interval specification will instead output an error message for "unsupported interval specification in randint."
+
+  #. `(lo:%integer,hi:%integer)`
+  #. `(lo:%real,hi:%real)`
+  #. Note: any other interval specification will instead output an error message for "unsupported interval specification in randint."
 
 * Function `seed`, given `(sd:%integer)`, provides a seed value for the random number generator.
 
@@ -455,17 +463,19 @@ The `type <https://github.com/lutzhamel/asteroid/blob/master/code/modules/type.a
 **Type Conversion**
 
 * Function `tointeger` converts a given input to an integer. It can be called with two different arguments,
-  1. `(item:%string,base:%integer)` where `base` is a valid base for integer conversion
-  2. `item` where `item` is converted to a base 10 integer.
+
+  #. `(item:%string,base:%integer)` where `base` is a valid base for integer conversion
+  #. `item` where `item` is converted to a base 10 integer.
 
 
 * Function `toreal`, given `item`, returns the input as a real number data type.
 * Function `toboolean`, given `item`, returns the input as a Boolean value of either true or false.
 * Function `tostring` converts an Asteroid object to a string. If format values are given, it applies the formatting to the object. It can be called with several different inputs where `*TP` indicates a`boolean`, `integer`, or `string` type and `w` is the width specification and `p` is the precision specification.  When no formatting information is provided a default string conversion occurs,
-  1. `(v:*TP,stringformat(w:%integer))`
-  2. `(v:%real,stringformat(w:%integer))`
-  3. `(v:%real,stringformat(w:%integer,p:%integer))`
-  4. `item` - defaul conversion
+
+  #. `(v:*TP,stringformat(w:%integer))`
+  #. `(v:%real,stringformat(w:%integer))`
+  #. `(v:%real,stringformat(w:%integer,p:%integer))`
+  #. `item` - defaul conversion
 
 * Function `tobase` represents the given integer `x` (*specifically* within the given input `(x:%integer,base:%integer)`) as a string in the given base.
 
@@ -483,8 +493,9 @@ Util
 The `util <https://github.com/lutzhamel/asteroid/blob/master/code/modules/util.ast>`_ module defines utility functions and structures that don't really fit into any other modules. It supports the following functions,
 
 * Function `exit` exits the program. It can be called with two inputs,
-  1. `none`
-  1. `msg:%string`
+
+  #. `none`
+  #. `msg:%string`
 
 * Function `copy`, given Asteroid object `obj`, makes a deep copy of it.
 * Function `cls` clears the terminal screen.
@@ -504,6 +515,7 @@ The `vector <https://github.com/lutzhamel/asteroid/blob/master/code/modules/vect
 * Function `vmult`, given the input `(a,b)`, returns the element by element vector multiplication.
 * Function `dot`, given `(a,b)`, computes the dot product of the two vectors.
 * Function `vop`  allows the developer to vectorize an function. It can be called with three different inputs:
-  1. `(f:%function,a:%list,b:%list)`
-  2. `(f:%function,a:%list,b %if isscalar(b))`
-  3. `(f:%function,a %if isscalar(a),b:%list)`
+
+  #. `(f:%function,a:%list,b:%list)`
+  #. `(f:%function,a:%list,b %if isscalar(b))`
+  #. `(f:%function,a %if isscalar(a),b:%list)`

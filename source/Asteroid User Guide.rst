@@ -252,9 +252,9 @@ As we saw earlier, the `tuple` is another fundamental, built-in data structure t
 Below is an example of a tuple declaration and access.
 ::
     load system "io".       -- load the io module so we can print
-    let a = (1,2,3).  	-- construct tuple a
-    let b = a @1.	  	-- access the second element in tuple a
-    println b.     		-- print the element to the console
+    let a = (1,2,3).  	    -- construct tuple a
+    let b = a @1.	  	    -- access the second element in tuple a
+    println b.     		    -- print the element to the console
 
 Like `lists`, `tuples` may also be nested,
 ::

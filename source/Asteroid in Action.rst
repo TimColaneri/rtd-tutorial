@@ -102,8 +102,8 @@ Finally we use the `reduce` function to map a list with repeated digits to a lis
     end
 
     let digits = "332211" @explode()
-                        @sort()
-                        @reduce(unique,[]).
+                          @sort()
+                          @reduce(unique,[]).
     println digits.
 
     assert(digits == ["1","2","3"]).
@@ -127,8 +127,8 @@ We use the `explode` function to turn a string into a list of characters. Then, 
     load system "io".
 
     let str = "Hello, World!" @explode()
-                            @reverse()
-                            @join("").
+                              @reverse()
+                              @join("").
     println str.
 
     assert(str == "!dlroW ,olleH").
@@ -169,7 +169,7 @@ with a capital letter.
         let letter_list = w @tolower()
                             @explode().
         let first_letter = letter_list @0
-                                    @toupper().
+                                       @toupper().
         if letter_list @length() > 1 do
             let title_case = ([first_letter] + letter_list @[1 to letter_list@length()-1]) @join("").
         else
@@ -235,7 +235,7 @@ In our solution we take advantage of Asteroid's `Pick` object.  The `Pick` objec
 
     -- generate the password and print it.
     let pwd = Pick pick_list @pick(15)
-                            @join("").
+                             @join("").
     println pwd.
 
     assert (pwd == "e3zvshdbS43brt#")
@@ -279,8 +279,8 @@ We will solve this programming problem using Asteroid's first-class patterns. We
 
     let dna_seq = "ACCATCAGTC".
     let rna_seq = dna_seq @explode()
-                        @map(dna2rna)
-                        @join("").
+                          @map(dna2rna)
+                          @join("").
     println rna_seq.
 
     assert(rna_seq == "UGGUAGUCAG").
@@ -326,15 +326,15 @@ w to z.
 
     let message = "hello, world!"
     let secret = message @explode()
-                        @map(encode)
-                        @join("").
+                         @map(encode)
+                         @join("").
     println secret.
 
     assert (secret == "dahhk, sknhz!")
 
     let decoded_msg = secret @explode()
-                            @map(decode)
-                            @join("").
+                             @map(decode)
+                             @join("").
     println decoded_msg.
 
     assert (decoded_msg == "hello, world!")
@@ -394,9 +394,9 @@ In our solution we use a hash table to count the number of word occurances.
     -- get rid of punctuation, turn to lower case, and split into words.
     -- Note: we could have employed richer regular expressions to clean up the text here
     let wl = text @replace("\.","")
-                @replace(",","")
-                @tolower()
-                @split().
+                  @replace(",","")
+                  @tolower()
+                  @split().
 
     -- put the words into a hash table, the value is the count of the words
     let ht = HashTable().
@@ -411,7 +411,7 @@ In our solution we use a hash table to count the number of word occurances.
     -- get the contents of hash table and find the most frequent word
     let (keys,values) = unzip(ht@aslist()).
     let values_sorted = values @copy()
-                            @sort(true).
+                               @sort(true).
     let most_frequent_word = keys @(values @index(values_sorted @0)).
     println most_frequent_word.
 
@@ -473,8 +473,8 @@ An anagram is a word, phrase, or name formed by rearranging the letters of anoth
 
     function normalize with str do
         return str @explode()
-                @sort()
-                @join("").
+                   @sort()
+                   @join("").
     end
 
     if normalize(str1) == normalize(str2) do
@@ -503,7 +503,7 @@ to left.
 
     function clean with str:%string do
         return str @tolower()
-                @replace("[^a-z]","").
+                   @replace("[^a-z]","").
     end
 
     -- only keep lower case letters
@@ -541,7 +541,7 @@ part of the original string.
 
     function clean with str:%string do
         return str @tolower()
-                @replace("[^a-z]","").
+                   @replace("[^a-z]","").
     end
 
     function palindrome_test with str:%string do
@@ -1424,7 +1424,7 @@ If we remove all the zeros from a binary number, then we are left with only `1` 
     load system "io".
 
     let bits = "1010101" @replace("0","")
-                        @length().
+                         @length().
     println bits.
 
     assert (bits == 4).
@@ -1517,9 +1517,9 @@ The zero name appears only in the case when the given number is zero.
     load system "math".
 
     let names = ["zero","one","two","three","four","five","six","seven","eight","nine",
-                "ten","eleven","twelve","thirteen","fourteen","fifteen",
-                "sixteen","seventeen","eighteen","nineteen","twenty","thirty",
-                "forty","fifty","sixty","seventy","eighty","ninety"].
+                 "ten","eleven","twelve","thirteen","fourteen","fifteen",
+                 "sixteen","seventeen","eighteen","nineteen","twenty","thirty",
+                 "forty","fifty","sixty","seventy","eighty","ninety"].
 
     function spell_number
         with (n:%integer) %if n < 20 do
@@ -2073,23 +2073,23 @@ Challenge: Transpose a matrix
 In Asteroid a matrix can be represented by nested lists, like so,
 ::
     let m = [[1,2],
-            [3,4]].
+             [3,4]].
 
 The transpose of this matrix is,
 ::
     let m = [[1,3],
-            [2,4]].
+             [2,4]].
 
 In a square matrix computing the transpose is just a matter of swapping around the elements.  However, here we will solve the more general problem for non-square matrices,
 ::
     let m = [[1,2],
-            [3,4],
-            [5,6]].
+             [3,4],
+             [5,6]].
 
 with its transpose,
 ::
     let m = [[1,3,5],
-            [2,4,6]].
+             [2,4,6]].
 The procedure:     
 ::
     load system "io".
@@ -2128,7 +2128,7 @@ The procedure:
     end
 
     let m = [[1,2],
-            [3,4]].
+             [3,4]].
 
     let mt = transpose(m).
 
@@ -2139,8 +2139,8 @@ The procedure:
     println ("").
 
     let m = [[1,2],
-            [3,4],
-            [5,6]].
+             [3,4],
+             [5,6]].
 
     let mt = transpose(m).
 

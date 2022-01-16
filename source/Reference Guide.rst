@@ -1,3 +1,4 @@
+.. highlight:: none
 
 Asteroid Reference Guide
 ========================

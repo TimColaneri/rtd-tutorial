@@ -243,7 +243,7 @@ As mentioned in `this section of the User Guide <https://github.com/lutzhamel/as
 as the return value from this function.
 
 
-See the `Prologue module <https://github.com/lutzhamel/asteroid/blob/master/modules/prologue.ast>`_ for more on all the functions above.
+See the `Prologue module <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/prologue.ast>`_ for more on all the functions above.
 
 
 Strings
@@ -251,7 +251,7 @@ Strings
 
 A string is a sequence of characters that can be used as a variable or a literal constant.
 
-* Function `gettype` will get the type of `x` as an Asteroid string. (See the module `Type.ast <https://github.com/lutzhamel/asteroid/blob/master/modules/type.ast>`_ for more on this function.) -->
+* Function `gettype` will get the type of `x` as an Asteroid string. (See the module `Type.ast <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/type.ast>`_ for more on this function.) -->
 
 * The following `string_member_functions`,
   ::
@@ -306,7 +306,7 @@ a list. It returns an integer index into the string or `none` if `item` was not 
 
 * Function `flip` explodes reverses a string.
 
-See the `Prologue module <https://github.com/lutzhamel/asteroid/blob/master/modules/prologue.ast>`_  for more on all the functions above.
+See the `Prologue module <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/prologue.ast>`_  for more on all the functions above.
 
 
 Asteroid Modules
@@ -317,7 +317,7 @@ There are a variety of usmodules that can be loaded into an Asteroid program usi
 Bitwise
 ^^^^^^^
 
-The `bitwise <https://github.com/lutzhamel/asteroid/blob/master/modules/bitwise.ast>`_ module defines Bitwise operations. It supports the following functions,
+The `bitwise <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/bitwise.ast>`_ module defines Bitwise operations. It supports the following functions,
 
 * Function `band` can be called with the input `(x:%integer, y:%integer)`, and performs the Bitwise AND operation.
 * Function `bor` can be called with the input `(x:%integer, y:%integer)`, and performs the Bitwise OR operation.
@@ -334,7 +334,7 @@ The `bitwise <https://github.com/lutzhamel/asteroid/blob/master/modules/bitwise.
 Hash
 ^^^^
 
-The `hash <https://github.com/lutzhamel/asteroid/blob/master/modules/hash.ast>`_ module implements a hash for name-values pairs. It supports the following functions,
+The `hash <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/hash.ast>`_ module implements a hash for name-values pairs. It supports the following functions,
 
 * Function `insert`, given the input `(name,value)`, will insert a given name-value pair into the table.
 * Function `get`, given `name`, will return the `value` associated with the given `name` as long as it can be found otherwise an exception will be thrown.
@@ -343,7 +343,7 @@ The `hash <https://github.com/lutzhamel/asteroid/blob/master/modules/hash.ast>`_
 IO
 ^^
 
-The `io <https://github.com/lutzhamel/asteroid/blob/master/modules/io.ast>`_ module implements Asteroid's I/O system. The module defines three default streams,
+The `io <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/io.ast>`_ module implements Asteroid's I/O system. The module defines three default streams,
 
 #. `__STDIN__` - the standard input stream.
 #. `__STDOUT__` - the standard output stream.
@@ -364,7 +364,7 @@ Furthermore, the module supports the following functions,
 Math
 ^^^^
 
-The `math <https://github.com/lutzhamel/asteroid/blob/master/modules/math.ast>`_ module implements mathematical constants and operators. It supports the following functions,
+The `math <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/math.ast>`_ module implements mathematical constants and operators. It supports the following functions,
 * Function `exp`, given `x:%integer`, returns e raised to the power `x`, where e = 2.718281… is the base of natural logarithms.
 * Function `log` can be called with two different argument setups,
 
@@ -400,12 +400,12 @@ The `math <https://github.com/lutzhamel/asteroid/blob/master/modules/math.ast>`_
 Pick
 ^^^^
 
-The `pick <https://github.com/lutzhamel/asteroid/blob/master/modules/pick.ast>`_ module implements the to randomly pick objects from a list of objects. A `Pick` object contains a list of items that can be randomly picked from using the `pick` member function. The `pick` function can be called with `n:%integer` and returns a list of `n` randomly picked objects from the object list.
+The `pick <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/pick.ast>`_ module implements the to randomly pick objects from a list of objects. A `Pick` object contains a list of items that can be randomly picked from using the `pick` member function. The `pick` function can be called with `n:%integer` and returns a list of `n` randomly picked objects from the object list.
 
 Random
 ^^^^^^
 
-The `random <https://github.com/lutzhamel/asteroid/blob/master/modules/random.ast>`_ module implements the `random` numbers. Using the functions included in this module will return a random value within a given range or interval. It supports the following functions,
+The `random <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/random.ast>`_ module implements the `random` numbers. Using the functions included in this module will return a random value within a given range or interval. It supports the following functions,
 * Function `random`, given the input `none`, returns a random floating point number in the range `[0.0, 1.0)`.
 * Function `randint` returns a random value N in the interval lo <= N <= hi. The exact random value output depends on the types of the values specifying the interval. It can be called with two different number interval inputs:
 
@@ -418,7 +418,7 @@ The `random <https://github.com/lutzhamel/asteroid/blob/master/modules/random.as
 Set
 ^^^
 
-The `set <https://github.com/lutzhamel/asteroid/blob/master/modules/set.ast>`_ module implements Asteroid sets as lists. Unlike lists, sets do not have repeated members. It supports the following functions,
+The `set <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/set.ast>`_ module implements Asteroid sets as lists. Unlike lists, sets do not have repeated members. It supports the following functions,
 * Function `toset`, given `(lst:%list)`, converts the input list into a set.
 * Function `sdiff`, given `(a:%list,b:%list)`, computes the difference set between the two set `a` and `b`.
 * Function `sintersection`, given `(a:%list,b:%list)`, finds the intersection between  sets `a` and `b`.
@@ -428,7 +428,7 @@ The `set <https://github.com/lutzhamel/asteroid/blob/master/modules/set.ast>`_ m
 Sort
 ^^^^
 
-The `sort <https://github.com/lutzhamel/asteroid/blob/master/modules/sort.ast>`_ module defines a parameterized `sort` function over a list.  The `sort` function makes use of a user-defined order predicate on the list's elements to perform the sort. The `Quicksort` is the underlying sort algorithm. See the module for an example of it in action. Example:
+The `sort <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/sort.ast>`_ module defines a parameterized `sort` function over a list.  The `sort` function makes use of a user-defined order predicate on the list's elements to perform the sort. The `Quicksort` is the underlying sort algorithm. See the module for an example of it in action. Example:
 ""
   sort(
     (lambda with (x,y) do return true if x<y else false),
@@ -441,7 +441,7 @@ return the sorted list,
 Stream
 ^^^^^^
 
-The `stream <https://github.com/lutzhamel/asteroid/blob/master/modules/stream.ast>`_ module implements a `Stream` structure. The `Stream` structure allows the developer to turn any list into a stream supporting interface functions like `peeking` ahead or `rewinding` the stream.  In order
+The `stream <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/stream.ast>`_ module implements a `Stream` structure. The `Stream` structure allows the developer to turn any list into a stream supporting interface functions like `peeking` ahead or `rewinding` the stream.  In order
 to construct a stream call the constructor on a list, e.g., `Stream([1,2,3])`.  The following stream
 interface functions are available,
 
@@ -458,7 +458,7 @@ does not contain any further elements for processing. Otherwise it returns `fals
 Type
 ^^^^
 
-The `type <https://github.com/lutzhamel/asteroid/blob/master/modules/type.ast>`_ module defines type related functions and structures.
+The `type <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/type.ast>`_ module defines type related functions and structures.
 
 **Type Conversion**
 
@@ -490,7 +490,7 @@ The `type <https://github.com/lutzhamel/asteroid/blob/master/modules/type.ast>`_
 Util
 ^^^^
 
-The `util <https://github.com/lutzhamel/asteroid/blob/master/modules/util.ast>`_ module defines utility functions and structures that don't really fit into any omodules. It supports the following functions,
+The `util <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/util.ast>`_ module defines utility functions and structures that don't really fit into any omodules. It supports the following functions,
 
 * Function `exit` exits the program. It can be called with two inputs,
 
@@ -508,7 +508,7 @@ The `util <https://github.com/lutzhamel/asteroid/blob/master/modules/util.ast>`_
 Vector
 ^^^^^^
 
-The `vector <https://github.com/lutzhamel/asteroid/blob/master/modules/vector.ast>`_ defines functions useful for vector arithmetic. It supports the following functions.  Here `a` and `b` are vectors implemented as lists,
+The `vector <https://github.com/lutzhamel/asteroid/blob/master/asteroid/modules/vector.ast>`_ defines functions useful for vector arithmetic. It supports the following functions.  Here `a` and `b` are vectors implemented as lists,
 
 * Function `vadd`, given the input `(a,b)`, returns a vector that contains the element by element sum of the input vectors.
 * Function `vsub`, given the input `(a,b)`, returns the element by element difference vector.

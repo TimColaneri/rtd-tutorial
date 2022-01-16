@@ -475,7 +475,7 @@ The `type <https://github.com/lutzhamel/asteroid/blob/master/code/modules/type.a
   #. `(v:*TP,stringformat(w:%integer))`
   #. `(v:%real,stringformat(w:%integer))`
   #. `(v:%real,stringformat(w:%integer,p:%integer))`
-  #. `item` - defaul conversion
+  #. `item` - default conversion
 
 * Function `tobase` represents the given integer `x` (*specifically* within the given input `(x:%integer,base:%integer)`) as a string in the given base.
 
@@ -508,7 +508,7 @@ The `util <https://github.com/lutzhamel/asteroid/blob/master/code/modules/util.a
 Vector
 ^^^^^^
 
-The `vector <https://github.com/lutzhamel/asteroid/blob/master/code/modules/vector.ast>`_ defines functions useful for vector arithmetic. It supports the following functions.  Here `a` and `b` are vectors implemented as lists,
+The `vector <https://github.com/lutzhamel/asteroid/tree/master/code/modules/vector.ast>`_ defines functions useful for vector arithmetic. It supports the following functions.  Here `a` and `b` are vectors implemented as lists,
 
 * Function `vadd`, given the input `(a,b)`, returns a vector that contains the element by element sum of the input vectors.
 * Function `vsub`, given the input `(a,b)`, returns the element by element difference vector.

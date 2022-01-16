@@ -1,3 +1,5 @@
+.. highlight:: c
+
 Asteroid User Guide
 ###################
 

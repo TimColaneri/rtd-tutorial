@@ -2314,7 +2314,7 @@ The Pascal triangle is a sequence of rows of integers. It starts with a single 1
 To calculate the values of the next row, you may want to iterate over the values of the current row and make the sums with the numbers next to it. Let us use the functional style that the language offers.
 Consider the fourth row, for example: 1 3 3 1. To make the fifth row, you can shift all the values by one position to the right and add them up to the current row:
 ::
-    13310
+      13310
     + 01331
     -------
     14641

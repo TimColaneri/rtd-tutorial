@@ -219,7 +219,7 @@ a list of alternating 1 and -1,
     load system "math".
 
     let a = [1 to 10] @map(lambda with x do return mod(x,2))
-                    @map(lambda with x do return 1 if x else -1).
+                      @map(lambda with x do return 1 if x else -1).
 
     println a.
 
@@ -233,8 +233,8 @@ Higher dimensional arrays can easily be simulated with lists of lists,
 
     -- build a 2-D array
     let b = [[1,2,3],
-            [4,5,6],
-            [7,8,9]].
+             [4,5,6],
+             [7,8,9]].
 
     -- modify an element in the array
     let b @1 @1 = 0.
@@ -261,8 +261,8 @@ Like `lists`, `tuples` may also be nested,
     load system "io".
     -- build a 2-D array
     let b = (("a","b","c"),
-            ("d","e","f"),
-            ("g","h","i")).
+             ("d","e","f"),
+             ("g","h","i")).
     -- Access an element in the nested structure.
     println(b @1 @1).
 
@@ -460,9 +460,9 @@ then doubles each value before returning the result,
     load system "io".
 
     function revdouble
-    with l:%list do
-        return l @reverse() @map(lambda with x:%integer do return 2*x).
-    end
+        with l:%list do
+            return l @reverse() @map(lambda with x:%integer do return 2*x).
+        end
 
     println (revdouble [1,2,3]).
 
@@ -536,11 +536,11 @@ Consider the following example of this predicate among some patterns,
     let p =	(1,2).
 
     if p is (x,y,z) do
-    println ("it's a triple with: "+x+","+y+","+z)
+        println ("it's a triple with: "+x+","+y+","+z)
     elif p is (x,y) do
-    println ("it's a pair with: "+x+","+y).
+        println ("it's a pair with: "+x+","+y).
     else do
-    println "it's something else".
+        println "it's something else".
     end
 
 Here we use patterns to determine if `p` is a triple, a pair, or something else. Pattern matching is embedded in the expressions of the `if` statement. The
@@ -675,7 +675,7 @@ that selects certain items from a list. Suppose we want to print out the names o
 
     -- print names that contain 'p'
     for Person(name:".*p.*",_) in people do
-    println name.
+        println name.
     end
 
 Here we pattern match the `Person` object in the `for` loop and then use a regular expression to see if the name of that person matches our requirement that it contains a lower case 'p'.  We can tag the pattern with a variable name, a named pattern, so that we can print out the name if the regular expression matches. The output is `Sophie`.  
@@ -763,9 +763,9 @@ of the instance,
         data age.
         data gender.
         function hello
-        with none do
-            println ("Hello, my name is "+this @name).
-        end
+            with none do
+                println ("Hello, my name is "+this @name).
+            end
         end
 
     let scarlett = Person("Scarlett",28,"F").
@@ -790,9 +790,9 @@ data fields.  So even if we declare a structure like this,
         data name.
         -- the function is defined in the middle of the data fields
         function hello
-        with none do
-            println ("Hello, my name is "+this @name).
-        end
+            with none do
+                println ("Hello, my name is "+this @name).
+            end
         data age.
         data gender.
         end
@@ -825,13 +825,13 @@ Here is the program listing for the example in Asteroid,
 
     function add_trick
         with new_trick:%string do
-        this @tricks @append new_trick.
+            this @tricks @append new_trick.
         end
 
     function __init__
         with name:%string do
-        let this @name = name.
-        let this @tricks = [].
+            let this @name = name.
+            let this @tricks = [].
         end
 
     end
@@ -911,7 +911,7 @@ Asteroid,
 ::
     function foo
         with (x %if (x is %boolean) or (x is %integer) or (x is %string),y) do
-        println (x,y).
+            println (x,y).
         end
 
 That complicated pattern for the first component completely obliterates the
@@ -922,12 +922,12 @@ We can express the same function with a first-class pattern,
 ::
     let TP = pattern
         with q %if (q is %boolean) or
-                (q is %integer) or
-                (q is %string).
+                   (q is %integer) or
+                   (q is %string).
 
     function foo
         with (x:*TP,y) do
-        println (x,y).
+            println (x,y).
         end
 
 It is clear now that the main input structure to the function is a pair and the
@@ -952,7 +952,7 @@ spots where the patterns occurs. Consider the following program snippet,
         end
 
     function stepf
-    with 0 do
+        with 0 do
             return 1
         orwith (n:%integer) %if n > 0 do
             return 1.
@@ -977,13 +977,13 @@ much more elegant way,
         end
 
     function stepf
-    with 0 do
-            return 1
-        orwith *POS_INT do
-            return 1.
-        orwith *NEG_INT do
-            return -1.
-        end
+        with 0 do
+                return 1
+            orwith *POS_INT do
+                return 1.
+            orwith *NEG_INT do
+                return -1.
+            end
 
 The relevant patterns are now stored in the variables `POS_INT` and `NEG_INT`
 which are then used in the function definitions.
@@ -1044,61 +1044,61 @@ network.  Here is the program listing,
     -----------------------------
     structure Family
     -----------------------------
-    with
-        data parent1.
-        data parent2.
-        data children.
+        with
+            data parent1.
+            data parent2.
+            data children.
 
-        function __init__
-        with (p1:%Parent,p2:%Parent,c:%Children) do
-            let this @parent1 = p1.
-            let this @parent2 = p2.
-            let this @children = c.
+            function __init__
+                with (p1:%Parent,p2:%Parent,c:%Children) do
+                    let this @parent1 = p1.
+                    let this @parent2 = p2.
+                    let this @children = c.
+                end
         end
-    end
 
     -----------------------------
     structure Parent
     -----------------------------
-    with
-        data name.
-        function __init__
-        with name:%string do
-            let this @name = name
+        with
+            data name.
+            function __init__
+                with name:%string do
+                    let this @name = name
+                end
         end
-    end
 
     -----------------------------
     structure Children
     -----------------------------
-    with
-        data list.
+        with
+            data list.
 
-        function __init__
-        with list:%list do
-            let this @list = list.
+            function __init__
+                with list:%list do
+                    let this @list = list.
+                end
         end
-    end
 
     -----------------------------
     let FP = pattern
     -----------------------------
-    with Family(Parent(p1),Parent(p2),Children(c)).
+        with Family(Parent(p1),Parent(p2),Children(c)).
 
     -----------------------------
     function construct_family
     -----------------------------
-    with (P,p1,p2,c) do
-        return eval(P).  -- run pattern in reverse, construct object network.
-    end
+        with (P,p1,p2,c) do
+            return eval(P).  -- run pattern in reverse, construct object network.
+        end
 
     -----------------------------
     function destructure_family
     -----------------------------
-    with (P,term) do
-        let *P = term.   -- pattern match, destructure object network.
-        return [p1,p2]+c.
-    end
+        with (P,term) do
+            let *P = term.   -- pattern match, destructure object network.
+            return [p1,p2]+c.
+        end
 
     -----------------------------
     -- construct families
@@ -1165,9 +1165,9 @@ example,
     load system "io".
 
     try
-    let x = 1/0.
+        let x = 1/0.
     catch Exception("ArithmeticError", s) do
-    println s.
+        println s.
     end
 
 The output is,
@@ -1180,9 +1180,9 @@ Asteroid also provides a predefined `Error` object for user level exceptions,
     load system "io".
 
     try
-    throw Error("something worth throwing").
+        throw Error("something worth throwing").
     catch Error(s) do
-    println s.
+        println s.
     end
 
 Of course the user can also use the `Exception` object for their own exceptions
@@ -1191,9 +1191,9 @@ by defining a `kind` that does not interfere with the predefined `kind` strings 
     load system "io".
 
     try
-    throw Exception("MyException","something worth throwing").
+        throw Exception("MyException","something worth throwing").
     catch Exception("MyException",s) do
-    println s.
+        println s.
     end
 
 The output here is,
@@ -1206,9 +1206,9 @@ the user is allowed to construct user level exceptions with any kind of object i
     load system "io".
 
     try
-    throw ("funny exception", 42).
+        throw ("funny exception", 42).
     catch ("funny exception", v) do
-    println v.
+        println v.
     end
 
 The output of this program is `42`.  
@@ -1219,9 +1219,9 @@ exception object itself.  Here is an example using a `wildcard`,
     load system "io".
 
     try
-    let (x,y) = (1,2,3).
+        let (x,y) = (1,2,3).
     catch _ do
-    println "something happened".
+        println "something happened".
     end
 
 Here is an example using a variable,
@@ -1230,9 +1230,9 @@ Here is an example using a variable,
     load system "type".
 
     try
-    let (x,y) = (1,2,3).
+        let (x,y) = (1,2,3).
     catch e do
-    println ("something happened: "+tostring(e)).
+        println ("something happened: "+tostring(e)).
     end
 
 In this last example we simply convert the caught exception object into a string
@@ -1288,10 +1288,10 @@ Here is a program that exercises some of the string formatting options,
 
 The output of the program is,
 ::
-        true
+          true
         5
-                    hello there!
-    3.142
+                      hello there!
+     3.142
 
 Notice the right justification of the various values within the given string length.
 

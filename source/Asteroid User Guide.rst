@@ -1,4 +1,4 @@
-.. highlight:: c
+.. highlight:: none
 
 Asteroid User Guide
 ###################

@@ -261,12 +261,10 @@ We will solve this programming problem using Asteroid's first-class patterns. We
     load system "io".
 
     let dna2rna_table =
-        [
-        ("A","U"),
-        ("C","G"),
-        ("G","C"),
-        ("T","A")
-        ].
+        [("A","U"),
+         ("C","G"),
+         ("G","C"),
+         ("T","A")].
 
     function dna2rna with x do
         for (dna,rna) in dna2rna_table do

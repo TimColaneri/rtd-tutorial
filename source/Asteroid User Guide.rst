@@ -533,7 +533,7 @@ Consider the following example of this predicate among some patterns,
 ::
     load system "io".
 
-    let p =	(1,2).
+    let p = (1,2).
 
     if p is (x,y,z) do
         println ("it's a triple with: "+x+","+y+","+z)

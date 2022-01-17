@@ -1082,7 +1082,7 @@ To illustrate it with an example, let’s take the number 1234 as the seed. On s
     let sq_str = tostring(sq).
     if sq_str @length() < 8 do
         let prefix = [1 to 8-sq_str@length()] @map(lambda with _ do return "0")
-                                            @join("").
+                                              @join("").
         let sq_str = prefix + sq_str.
     end
     let rstr = sq_str @[2 to 5].
